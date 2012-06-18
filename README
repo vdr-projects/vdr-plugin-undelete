@@ -1,0 +1,26 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Written by:                           Hardy Flor <HFlor@web.de>
+
+Project's homepage (vdr):             www.cadsoft.de/people/kls/vdr
+Project's homepage (playlist):        www.fast-info.de/vdr/undelete
+
+See the file COPYING for license information.
+
+undelete-plugin version 0.0.2
+
+This plugin allow the undelete from deleted recordings for a short time
+
+If the VDR idle then erase all deleted recordings! 
+
+Handling:
+
+You can build the list from plugin-setup (by 'Display deleted recordings now') or is the
+mainmenuentry visible from then mainmenu.
+
+red    - open a directory (if a directory selected)
+green  - salvage a recording
+yellow - purge a recording
+blue   - show summary (if a recording with summary selected)
+
+back   - close the menu
