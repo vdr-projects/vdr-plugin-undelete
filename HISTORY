@@ -32,3 +32,9 @@ VDR Plugin 'playlist' Revision History
 - Fix select a line with a numeric-key
 - Fix switch hotkeys with the same key
 - Add missing display of assigned keys
+
+2006-03-15 : Version 0.0.6
+
+- add French translation (thanks to pat@vdrportal.de)
+- Change translation for Keys with numbers
+- add check for count of *.vdr files

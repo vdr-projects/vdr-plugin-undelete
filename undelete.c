@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: undelete.c 0.5 2005/11/17 21:05:05 hflor Exp $
+ * $Id: undelete.c 0.6 2006/03/15 22:12:06 hflor Exp $
  */
 
 #include "undelete.h"
@@ -16,7 +16,7 @@
 #include <vdr/recording.h>
 #include <vdr/videodir.h>
 
-static const char *VERSION           = "0.0.5";
+static const char *VERSION           = "0.0.6";
 static const char *DESCRIPTION       = "undelete for recordings";
 
 // Global variables that control the overall behaviour:
@@ -71,7 +71,7 @@ int         KeyState = 0;
 const char  *FunctionLine[4];
 const char  *FunctionName[MaxFunctionName];
 const char  *FunctionHotKey[MaxFunctionName];
-const char  *KeysName[MaxKeysName];
+char        *KeysName[MaxKeysName];
 
 cRemoveThread oRemoveThread;
 
@@ -197,6 +197,7 @@ void ExpandEnvironment(tParamFile *FileStruc)
 class cPluginUndelete : public cPlugin {
 private:
   // Add any member variables or functions you may need here.
+  void FreeKeyNames(void);
   int OSDLanguage;
   void TestAndSetOSDLanguage(void);
   bool ProcessArg(int argc, char *argv[]);
@@ -236,21 +237,30 @@ cPluginUndelete::cPluginUndelete(void)
   // DON'T DO ANYTHING ELSE THAT MAY HAVE SIDE EFFECTS, REQUIRE GLOBAL
   // VDR OBJECTS TO EXIST OR PRODUCE ANY OUTPUT!
   plugin = this;
+  memset(KeysName, sizeof(KeysName), 0);
 }
 
 cPluginUndelete::~cPluginUndelete()
 {
   d2syslog("cPluginUndelete::~cPluginUndelete", "%s", "");
   plugin = NULL;
+  FreeKeyNames();
   freenull(SVDRP_Process);
   freenull(WorkFilename);
   // Clean up after yourself!
+}
+
+void cPluginUndelete::FreeKeyNames(void)
+{
+  for (int i = 0; i < MaxKeysName; i++)
+    freenull(KeysName[i]);
 }
 
 void cPluginUndelete::TestAndSetOSDLanguage(void)
 {
   d2syslog("cPluginUndelete::TestAndSetOSDLanguage", "OSDLanguage=%d", Setup.OSDLanguage);
   if (OSDLanguage != Setup.OSDLanguage) {
+    FreeKeyNames();
     OSDLanguage = Setup.OSDLanguage;
     FunctionLine[0] = tr("Choise$none");
     FunctionLine[1] = tr("Choise$top");
@@ -276,34 +286,17 @@ void cPluginUndelete::TestAndSetOSDLanguage(void)
     FunctionHotKey[8] = tr("Display$<--1");
     FunctionHotKey[9] = tr("Display$2-->");
     FunctionHotKey[10] = tr("Display$disp. keys");
-    KeysName[0] = tr("Choise$none");
-    KeysName[1] = tr("Choise$Red (1)");
-    KeysName[2] = tr("Choise$Red (2)");
-    KeysName[3] = tr("Choise$Green (1)");
-    KeysName[4] = tr("Choise$Green (2)");
-    KeysName[5] = tr("Choise$Yellow (1)");
-    KeysName[6] = tr("Choise$Yellow (2)");
-    KeysName[7] = tr("Choise$Blue (1)");
-    KeysName[8] = tr("Choise$Blue (2)");
-    KeysName[9] = "0";
-    KeysName[10] = "1";
-    KeysName[11] = "2";
-    KeysName[12] = "3";
-    KeysName[13] = "4";
-    KeysName[14] = "5";
-    KeysName[15] = "6";
-    KeysName[16] = "7";
-    KeysName[17] = "8";
-    KeysName[18] = "9";
-    KeysName[19] = tr("Choise$User1");
-    KeysName[20] = tr("Choise$User2");
-    KeysName[21] = tr("Choise$User3");
-    KeysName[22] = tr("Choise$User4");
-    KeysName[23] = tr("Choise$User5");
-    KeysName[24] = tr("Choise$User6");
-    KeysName[25] = tr("Choise$User7");
-    KeysName[26] = tr("Choise$User8");
-    KeysName[27] = tr("Choise$User9");
+    KeysName[0] = strdup(tr("Choise$none"));
+    for (int i = 1; i <= 2; i++) {
+      asprintf(&KeysName[i], "%s (%d)", tr("Red"), i);
+      asprintf(&KeysName[i+2], "%s (%d)", tr("Green"), i);
+      asprintf(&KeysName[i+4], "%s (%d)", tr("Yellow"), i);
+      asprintf(&KeysName[i+6], "%s (%d)", tr("Blue"), i);
+    }
+    for (int i = 0; i <= 9; i++)
+      asprintf(&KeysName[i+9], "%d", i);
+    for (int i = 1; i <= 9; i++)
+      asprintf(&KeysName[i+18], "%s %d", tr("Choise$User"), i);
   }
 }
 
@@ -961,8 +954,29 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
             }
             char *temp;
             asprintf(&temp, "%sS#%d#", SVDRP_Process ? SVDRP_Process : "", recnumber);
-            freenull(SVDRP_Process);
+            free(SVDRP_Process);
             SVDRP_Process = temp;
+            cIndexFile *index = new cIndexFile(NewName, false);
+            int LastFrame = index->Last() - 1;
+            if (LastFrame > 0) {
+              uchar FileNumber = 0;
+              int FileOffset = 0;
+              index->Get(LastFrame, &FileNumber, &FileOffset);
+              delete index;
+              if (FileNumber == 0)
+                return cString::sprintf("error while read last filenumber for \"%s\" [%s]", Option, recording->Title());
+              for (int i = 1; i <= FileNumber; i++) {
+                asprintf(&temp, "%s/%03d.vdr", (const char *)NewName, i);
+                if (access(temp, R_OK) != 0) {
+                  free(temp);
+                  return cString::sprintf("error accessing vdrfile %03d for \"%s\" [%s]", i, Option, recording->Title());
+                }
+                free(temp);
+              }
+            } else {
+              delete index;
+              return cString::sprintf("error accessing indexfile for \"%s\" [%s]", Option, recording->Title());
+            }
             ReplyCode = 909;
             return cString::sprintf("salvage of deleted recording \"%s\" [%s] is successful", Option, recording->Title());
           } else

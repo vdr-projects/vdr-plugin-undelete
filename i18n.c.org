@@ -15,7 +15,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Enregistrements effacés",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -33,7 +33,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Effacer ligne",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -51,7 +51,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Touche d'aide",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -86,7 +86,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Vider",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -104,7 +104,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Restaurer",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -121,7 +121,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Restauration d'enregistrement",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -139,7 +139,41 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "inconnu",
+    "",// TODO Français
+    "",// TODO Norsk
+    "",// TODO suomi
+    "",// TODO Polski
+    "",// TODO Español
+    "",// TODO Ellinika
+    "",// TODO Svenska
+    "",// TODO Romaneste
+    "",// TODO Magyar
+    "",// TODO Català
+  },
+  { "Choise$Blue (1)",
+    "Blau (1)",
+    "",// TODO Slovenski
+    "",// TODO Italiano
+    "",// TODO Nederlands
+    "",// TODO Português
+    "",// TODO Français
+    "",// TODO Norsk
+    "",// TODO suomi
+    "",// TODO Polski
+    "",// TODO Español
+    "",// TODO Ellinika
+    "",// TODO Svenska
+    "",// TODO Romaneste
+    "",// TODO Magyar
+    "",// TODO Català
+  },
+  { "Choise$Blue (2)",
+    "Blau (2)",
+    "",// TODO Slovenski
+    "",// TODO Italiano
+    "",// TODO Nederlands
+    "",// TODO Português
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -156,7 +190,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "en bas",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -173,7 +207,41 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Affiche des touches",
+    "",// TODO Français
+    "",// TODO Norsk
+    "",// TODO suomi
+    "",// TODO Polski
+    "",// TODO Español
+    "",// TODO Ellinika
+    "",// TODO Svenska
+    "",// TODO Romaneste
+    "",// TODO Magyar
+    "",// TODO Català
+  },
+  { "Choise$Green (1)",
+    "Grün (1)",
+    "",// TODO Slovenski
+    "",// TODO Italiano
+    "",// TODO Nederlands
+    "",// TODO Português
+    "",// TODO Français
+    "",// TODO Norsk
+    "",// TODO suomi
+    "",// TODO Polski
+    "",// TODO Español
+    "",// TODO Ellinika
+    "",// TODO Svenska
+    "",// TODO Romaneste
+    "",// TODO Magyar
+    "",// TODO Català
+  },
+  { "Choise$Green (2)",
+    "Grün (2)",
+    "",// TODO Slovenski
+    "",// TODO Italiano
+    "",// TODO Nederlands
+    "",// TODO Português
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -190,7 +258,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "sans",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -207,7 +275,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "ouvrir",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -224,7 +292,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Ouvrir/contenu",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -241,7 +309,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "effacer",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -258,7 +326,41 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "effacer tout",
+    "",// TODO Français
+    "",// TODO Norsk
+    "",// TODO suomi
+    "",// TODO Polski
+    "",// TODO Español
+    "",// TODO Ellinika
+    "",// TODO Svenska
+    "",// TODO Romaneste
+    "",// TODO Magyar
+    "",// TODO Català
+  },
+  { "Choise$Red (1)",
+    "Rot (1)",
+    "",// TODO Slovenski
+    "",// TODO Italiano
+    "",// TODO Nederlands
+    "",// TODO Português
+    "",// TODO Français
+    "",// TODO Norsk
+    "",// TODO suomi
+    "",// TODO Polski
+    "",// TODO Español
+    "",// TODO Ellinika
+    "",// TODO Svenska
+    "",// TODO Romaneste
+    "",// TODO Magyar
+    "",// TODO Català
+  },
+  { "Choise$Red (2)",
+    "Rot (2)",
+    "",// TODO Slovenski
+    "",// TODO Italiano
+    "",// TODO Nederlands
+    "",// TODO Português
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -275,7 +377,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "restaurer",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -292,7 +394,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "restaurer tout",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -309,7 +411,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Contenu",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -326,7 +428,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Choix touche 1",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -343,7 +445,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Choix touche 2",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -360,7 +462,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "en haut",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -377,7 +479,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "en haut & en bas",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -388,13 +490,183 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Magyar
     "",// TODO Català
   },
-  { "Choise$User",
-    "Benutzer",
+  { "Choise$User1",
+    "Benutzer 1",
     "",// TODO Slovenski
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Utilisateur",
+    "",// TODO Français
+    "",// TODO Norsk
+    "",// TODO suomi
+    "",// TODO Polski
+    "",// TODO Español
+    "",// TODO Ellinika
+    "",// TODO Svenska
+    "",// TODO Romaneste
+    "",// TODO Magyar
+    "",// TODO Català
+  },
+  { "Choise$User2",
+    "Benutzer 2",
+    "",// TODO Slovenski
+    "",// TODO Italiano
+    "",// TODO Nederlands
+    "",// TODO Português
+    "",// TODO Français
+    "",// TODO Norsk
+    "",// TODO suomi
+    "",// TODO Polski
+    "",// TODO Español
+    "",// TODO Ellinika
+    "",// TODO Svenska
+    "",// TODO Romaneste
+    "",// TODO Magyar
+    "",// TODO Català
+  },
+  { "Choise$User3",
+    "Benutzer 3",
+    "",// TODO Slovenski
+    "",// TODO Italiano
+    "",// TODO Nederlands
+    "",// TODO Português
+    "",// TODO Français
+    "",// TODO Norsk
+    "",// TODO suomi
+    "",// TODO Polski
+    "",// TODO Español
+    "",// TODO Ellinika
+    "",// TODO Svenska
+    "",// TODO Romaneste
+    "",// TODO Magyar
+    "",// TODO Català
+  },
+  { "Choise$User4",
+    "Benutzer 4",
+    "",// TODO Slovenski
+    "",// TODO Italiano
+    "",// TODO Nederlands
+    "",// TODO Português
+    "",// TODO Français
+    "",// TODO Norsk
+    "",// TODO suomi
+    "",// TODO Polski
+    "",// TODO Español
+    "",// TODO Ellinika
+    "",// TODO Svenska
+    "",// TODO Romaneste
+    "",// TODO Magyar
+    "",// TODO Català
+  },
+  { "Choise$User5",
+    "Benutzer 5",
+    "",// TODO Slovenski
+    "",// TODO Italiano
+    "",// TODO Nederlands
+    "",// TODO Português
+    "",// TODO Français
+    "",// TODO Norsk
+    "",// TODO suomi
+    "",// TODO Polski
+    "",// TODO Español
+    "",// TODO Ellinika
+    "",// TODO Svenska
+    "",// TODO Romaneste
+    "",// TODO Magyar
+    "",// TODO Català
+  },
+  { "Choise$User6",
+    "Benutzer 6",
+    "",// TODO Slovenski
+    "",// TODO Italiano
+    "",// TODO Nederlands
+    "",// TODO Português
+    "",// TODO Français
+    "",// TODO Norsk
+    "",// TODO suomi
+    "",// TODO Polski
+    "",// TODO Español
+    "",// TODO Ellinika
+    "",// TODO Svenska
+    "",// TODO Romaneste
+    "",// TODO Magyar
+    "",// TODO Català
+  },
+  { "Choise$User7",
+    "Benutzer 7",
+    "",// TODO Slovenski
+    "",// TODO Italiano
+    "",// TODO Nederlands
+    "",// TODO Português
+    "",// TODO Français
+    "",// TODO Norsk
+    "",// TODO suomi
+    "",// TODO Polski
+    "",// TODO Español
+    "",// TODO Ellinika
+    "",// TODO Svenska
+    "",// TODO Romaneste
+    "",// TODO Magyar
+    "",// TODO Català
+  },
+  { "Choise$User8",
+    "Benutzer 8",
+    "",// TODO Slovenski
+    "",// TODO Italiano
+    "",// TODO Nederlands
+    "",// TODO Português
+    "",// TODO Français
+    "",// TODO Norsk
+    "",// TODO suomi
+    "",// TODO Polski
+    "",// TODO Español
+    "",// TODO Ellinika
+    "",// TODO Svenska
+    "",// TODO Romaneste
+    "",// TODO Magyar
+    "",// TODO Català
+  },
+  { "Choise$User9",
+    "Benutzer 9",
+    "",// TODO Slovenski
+    "",// TODO Italiano
+    "",// TODO Nederlands
+    "",// TODO Português
+    "",// TODO Français
+    "",// TODO Norsk
+    "",// TODO suomi
+    "",// TODO Polski
+    "",// TODO Español
+    "",// TODO Ellinika
+    "",// TODO Svenska
+    "",// TODO Romaneste
+    "",// TODO Magyar
+    "",// TODO Català
+  },
+  { "Choise$Yellow (1)",
+    "Gelb (1)",
+    "",// TODO Slovenski
+    "",// TODO Italiano
+    "",// TODO Nederlands
+    "",// TODO Português
+    "",// TODO Français
+    "",// TODO Norsk
+    "",// TODO suomi
+    "",// TODO Polski
+    "",// TODO Español
+    "",// TODO Ellinika
+    "",// TODO Svenska
+    "",// TODO Romaneste
+    "",// TODO Magyar
+    "",// TODO Català
+  },
+  { "Choise$Yellow (2)",
+    "Gelb (2)",
+    "",// TODO Slovenski
+    "",// TODO Italiano
+    "",// TODO Nederlands
+    "",// TODO Português
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -411,7 +683,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "<--1",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -428,7 +700,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "2-->",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -445,7 +717,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Afficher les touches",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -462,7 +734,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "attendez, merci",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -479,7 +751,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "L'affichage liste en préparation...",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -496,7 +768,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Effacer",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -513,7 +785,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "effacer tout",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -530,7 +802,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Effacer tous les enregistrement définitivement ...",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -547,7 +819,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Restaurer tout les enregistrements ...",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -564,7 +836,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Restaurer",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -581,7 +853,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "restaurer tout",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -598,7 +870,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Touche de %s et %s sont les mêmes.",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -615,7 +887,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Des enregistrements avec le même nom existent!",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -632,7 +904,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Touch\tFonction",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -649,7 +921,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Touch numérique",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -666,7 +938,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "OK",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -683,7 +955,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Touches assignées",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -700,7 +972,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Restaurer enregistrement",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -768,7 +1040,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Restaurer tout les enregistrements?",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -785,7 +1057,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Restaurer enregistrement?",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -802,7 +1074,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Restaurer l'enregistrement dans dossier?",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -819,7 +1091,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "  ** Touche spéciale **",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -836,7 +1108,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Changer la configuration des touches",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -853,7 +1125,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Confirmation effacer tout",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -870,7 +1142,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Confirmer effacer enregistrement",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -887,7 +1159,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Confirmer effacer dossier",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -904,7 +1176,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Confirmer restaurer tout",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -921,7 +1193,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Confirmer restaurer enregistrement",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -938,7 +1210,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Confirmer restaurer dossier",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -955,7 +1227,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "  Nombre de ligne d'affichage d'effacement",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -972,7 +1244,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "  Nombre de ligne d'affichage",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -989,7 +1261,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Afficher les enregistrements effacés",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -1006,7 +1278,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "  Ligne interrieur",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -1023,7 +1295,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "  Touch pour fonction-%s",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -1040,7 +1312,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "  Nom afficher pour le menu principal",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -1057,7 +1329,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "  Choix avec numéro et",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -1074,7 +1346,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "  Fonction touch OK",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -1091,7 +1363,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "La ligne de commande a priorité",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -1108,7 +1380,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Position de la ligne d'éffacement",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -1125,7 +1397,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Position de la ligne de restauration",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -1142,7 +1414,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Choix",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -1159,7 +1431,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO Italiano
     "",// TODO Nederlands
     "",// TODO Português
-    "Protokolle mode complet",
+    "",// TODO Français
     "",// TODO Norsk
     "",// TODO suomi
     "",// TODO Polski
@@ -1172,57 +1444,6 @@ const tI18nPhrase Phrases[] = {
   },
   { "Setup$Visible in Mainmenu",
     "Im Hauptmenü sichtbar",
-    "",// TODO Slovenski
-    "",// TODO Italiano
-    "",// TODO Nederlands
-    "",// TODO Português
-    "Visible dans le menu principal",
-    "",// TODO Norsk
-    "",// TODO suomi
-    "",// TODO Polski
-    "",// TODO Español
-    "",// TODO Ellinika
-    "",// TODO Svenska
-    "",// TODO Romaneste
-    "",// TODO Magyar
-    "",// TODO Català
-  },
-  { "Error$error while read last filenumber",
-    "Fehler beim lesen der letzten Dateinummer",
-    "",// TODO Slovenski
-    "",// TODO Italiano
-    "",// TODO Nederlands
-    "",// TODO Português
-    "",// TODO Français
-    "",// TODO Norsk
-    "",// TODO suomi
-    "",// TODO Polski
-    "",// TODO Español
-    "",// TODO Ellinika
-    "",// TODO Svenska
-    "",// TODO Romaneste
-    "",// TODO Magyar
-    "",// TODO Català
-  },
-  { "Error$error accessing vdrfile %03d",
-    "Fehler beim lesen der Videodatei %03d",
-    "",// TODO Slovenski
-    "",// TODO Italiano
-    "",// TODO Nederlands
-    "",// TODO Português
-    "",// TODO Français
-    "",// TODO Norsk
-    "",// TODO suomi
-    "",// TODO Polski
-    "",// TODO Español
-    "",// TODO Ellinika
-    "",// TODO Svenska
-    "",// TODO Romaneste
-    "",// TODO Magyar
-    "",// TODO Català
-  },
-  { "Error$error accessing indexfile",
-    "Fehler beim lesen der Indexdatei",
     "",// TODO Slovenski
     "",// TODO Italiano
     "",// TODO Nederlands

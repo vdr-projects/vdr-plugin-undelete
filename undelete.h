@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: undelete.h 0.5 2005/11/17 21:05:05 hflor Exp $
+ * $Id: undelete.h 0.6 2006/03/15 22:12:06 hflor Exp $
  */
 
 #ifndef __UNDELETE_H
@@ -149,7 +149,7 @@ extern const char  *FunctionLine[];
 extern const char  *FunctionName[];
 extern const char  *FunctionHotKey[];
 #define MaxKeysName 28
-extern const char  *KeysName[];
+extern char        *KeysName[];
 
 void ExpandEnvironment(tParamFile *FileStruc);
 

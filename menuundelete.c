@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: menuundelete.c 0.5 2005/11/17 21:05:05 hflor Exp $
+ * $Id: menuundelete.c 0.6 2006/03/15 22:12:06 hflor Exp $
  */
 
 #include "menuundelete.h"
@@ -672,6 +672,39 @@ eOSState cMenuUndelete::ProcessKey(eKeys Key)
                                     processerror = true;
                                   }
                                   SalvageRecording = true;
+                                  cIndexFile *index = new cIndexFile(NewName, false);
+                                  int LastFrame = index->Last() - 1;
+                                  if (LastFrame > 0) {
+                                    uchar FileNumber = 0;
+                                    int FileOffset = 0;
+                                    index->Get(LastFrame, &FileNumber, &FileOffset);
+                                    delete index;
+                                    if (FileNumber == 0) {
+                                      if (verbose.u)
+                                        isyslog("%s: error while read last filenumber (%s)", plugin_name, NewName);
+                                      ERROR(tr("Error$error while read last filenumber"));
+                                    } else {
+                                      for (int i = 1; i <= FileNumber; i++) {
+                                        char *temp;
+                                        asprintf(&temp, "%s/%03d.vdr", (const char *)NewName, i);
+                                        if (access(temp, R_OK) != 0) {
+                                          i = FileNumber;                                          
+                                          if (verbose.u)
+                                            isyslog("%s: error accessing vdrfile %03d (%s)", plugin_name, i, NewName);
+                                          free(temp);
+                                          asprintf(&temp, tr("Error$error accessing vdrfile %03d"), i);
+                                          ERROR(temp);
+                                        }
+                                        free(temp);
+                                      }
+                                    }
+                                  } else {
+                                    delete index;
+                                    if (verbose.u)
+                                      isyslog("%s: error accessing indexfile (%s)", plugin_name, NewName);
+                                    ERROR(tr("Error$error accessing indexfile"));
+                                  }
+// *********************************                                  
                                 }
                               }
                               free(NewName);
