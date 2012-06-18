@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: vdrtools.c 0.1 2004/10/08 02:03:31 hflor Exp $
+ * $Id: vdrtools.c 0.4 2005/11/16 18:39:18 hflor Exp $
  */
 
 #include "vdrtools.h"
@@ -11,6 +11,57 @@
 #include "i18n.h"
 #include <vdr/menu.h>
 #include <vdr/interface.h>
+
+#if VDRVERSNUM < 10318
+// --- cReadLine -------------------------------------------------------------
+
+cReadLine::cReadLine(void)
+{
+  size = 0;
+  buffer = NULL;
+}
+
+cReadLine::~cReadLine()
+{
+  free(buffer);
+}
+
+char *cReadLine::Read(FILE *f)
+{
+  int n = getline(&buffer, &size, f);
+  if (n > 0) {
+     n--;
+     if (buffer[n] == '\n')
+        buffer[n] = 0;
+     return buffer;
+     }
+  return NULL;
+}
+#endif
+
+#ifdef HAVE_SVDRP
+bool GetVDRSize(const char *dir, long long &llSize)
+{
+  bool bRet = false;
+  struct stat fileinfo;
+  cPipe pipe;
+  if (pipe.Open((const char *)cString::sprintf("find '%s' -follow -type f", dir), "r"))
+  {
+    cReadLine ReadLine;
+    char *s;
+    while ((s = ReadLine.Read(pipe)) != NULL)
+    {
+      if (stat(s, &fileinfo) != -1)
+      {
+        llSize += (long long)fileinfo.st_size;
+        bRet = true;
+      }
+    }
+    pipe.Close();
+  }
+  return bRet;
+}
+#endif
 
 char *SkipQuote(char *s)
 {
@@ -68,7 +119,7 @@ char *ExchangeChars(char *s, bool ToFileSystem)
   return s;
 }
 
-#ifdef UND_Debug1
+#ifdef UND_Debug
 const char *KeyName(eKeys Key)
 {
   switch (RAWKEY(Key))
@@ -123,8 +174,9 @@ const char *KeyName(eKeys Key)
     case kUser9:      return tr("User9");          break;
     case kNone:       return tr("none");           break;
     case kKbd:        return tr("Kbd");            break;
-    case kUnDelRec:   return tr("UnDelRec");       break;
-    case kDelRec:     return tr("DelRec");         break;
+    case kSalvageRec: return tr("Salvage");        break;
+    case kPurgeRec:   return tr("Purge");          break;
+    case kDelLine:    return tr("DeleteLine");     break;
     case kHelpKeys:   return tr("HelpKeys");       break;
     default:          return tr("unknow");         break;
   }
@@ -163,9 +215,6 @@ const char *OSStateName(eOSState OSState)
     case osUser8:      return "osUser8";
     case osUser9:      return "osUser9";
     case osUser10:     return "osUser10";
-#if VDRVERSNUM < 10307
-    case osUser11:     return "osUser11";
-#endif
     default:           return "unknow";
   }
   return "";

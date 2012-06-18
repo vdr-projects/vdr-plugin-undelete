@@ -1,13 +1,12 @@
 This is a "plugin" for the Video Disk Recorder (VDR).
 
-Written by:                           Hardy Flor <HFlor@web.de>
+Written by:                  Hardy Flor <HFlor@web.de>
 
-Project's homepage (vdr):             www.cadsoft.de/people/kls/vdr
-Project's homepage (playlist):        www.fast-info.de/vdr/undelete
+Project's homepage:          www.fast-info.de/vdr/undelete
 
 See the file COPYING for license information.
 
-undelete-plugin version 0.0.2
+undelete-plugin version 0.0.5
 
 This plugin allow the undelete from deleted recordings for a short time
 
@@ -18,9 +17,12 @@ Handling:
 You can build the list from plugin-setup (by 'Display deleted recordings now') or is the
 mainmenuentry visible from then mainmenu.
 
-red    - open a directory (if a directory selected)
-green  - salvage a recording
-yellow - purge a recording
-blue   - show summary (if a recording with summary selected)
+The keys for purge and salvage can you change in the setup of plugin
 
-back   - close the menu
+control with SVDRP is also allow:
+
+PLUG undelte LSTD    [ <number> ]   List deleted recordings
+PLUG undelte SIZED   [ -h ]         Caclulate the size of deleted recordings
+PLUG undelte RMDIR                  Start remove empty directory
+PLUG undelte PURGE   ALL | <number> purge the selected deleted recording
+PLUG undelte SALVAGE ALL | <number> salvage the selected deleted recording

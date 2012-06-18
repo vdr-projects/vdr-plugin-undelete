@@ -3,13 +3,17 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: menunoselectitem.h 0.4 2005/11/16 18:39:18 hflor Exp $
+ * $Id: menunoselectitem.h 0.5 2005/11/17 21:05:05 hflor Exp $
  */
 
 #ifndef __MENUNOSELECTITEM_H
 #define __MENUNOSELECTITEM_H
 
 #include <vdr/osd.h>
+#include <vdr/config.h>
+#ifdef HAVE_ELCHI
+  #include <vdr/theme.h>
+#endif
 
 // --- cMenuOsdNoSelectItem -----------------------------------------------------
 

@@ -1,7 +1,7 @@
 #
 # Makefile for a Video Disk Recorder plugin
 #
-# $Id: Makefile 1.8 2002/12/13 14:54:14 kls Exp $
+# $Id: Makefile 0.4 2005/11/07 16:47:18 hflor Exp $
 
 # The official name of this plugin.
 # This name will be used in the '-P...' option of VDR to load the plugin.
@@ -16,11 +16,7 @@ VERSION = $(shell grep 'static const char \*VERSION *=' $(PLUGIN).c | awk '{ pri
 ### The C++ compiler and options:
 
 CXX      ?= g++
-CXXFLAGS ?= -O2 -Wall -Woverloaded-virtual
-
-### Allow user defined options to overwrite defaults:
-
--include $(VDRDIR)/Make.config
+CXXFLAGS ?= -fPIC -O2 -Wall -Woverloaded-virtual
 
 ### The directory environment:
 
@@ -29,12 +25,14 @@ VDRDIR = ../../..
 LIBDIR = ../../lib
 TMPDIR = /tmp
 
+### Allow user defined options to overwrite defaults:
+
+-include $(VDRDIR)/Make.config
+
 ### The version number of VDR (taken from VDR's "config.h"):
 
 VDRVERSION = $(shell grep 'define VDRVERSION ' $(VDRDIR)/config.h | awk '{ print $$3 }' | sed -e 's/"//g')
 VDRVERSNUM = $(shell grep 'define VDRVERSNUM ' $(VDRDIR)/config.h | awk '{ print $$3 }' | sed -e 's/"//g')
-
-### DEFINES += -DVDRVERSNUM=$(VDRVERSNUM)
 
 ### The name of the distribution archive:
 
@@ -45,35 +43,33 @@ PACKAGE = vdr-$(ARCHIVE)
 
 INCLUDES += -I$(VDRDIR)/include -I$(DVBDIR)/include
 
-DEFINES += -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
-DEFINES += -D_GNU_SOURCE
+DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
+
+### Test SVDRP
+ifeq ($(shell grep -q ReplyCode $(VDRDIR)/plugin.h ; echo $$?),0)
+  DEFINES += -DHAVE_SVDRP
+endif
 
 ### Test Elchi
-
-#ELCHIVERSION = $(shell grep 'define ELCHIAIOVERSION ' $(VDRDIR)/config.h | awk '{ print $$3 }' | sed -e 's/"//g')
-
 ifeq ($(shell test -f $(VDRDIR)/theme.h ; echo $$?),0)
   DEFINES += -DHAVE_ELCHI
 endif
 
 ### Test wareagle-patch
-
 ifeq ($(shell test -f $(VDRDIR)/iconpatch.h ; echo $$?),0)
   DEFINES += -DHAVE_ICONPATCH
 endif
 
 #for more debug lines
-DEFINES += -DUND_Debug1
-DEFINES += -DUND_Debug2
-DEFINES += -DUND_Debug3
-CXXFLAGS += -g
+#DEFINES += -DUND_Debug1 #
+#DEFINES += -DUND_Debug2 # log all functions with parameters
+#DEFINES += -DUND_Debug3 # log all ProcessKey calls without kNone
 
 ### The object files (add further files here):
 
-OBJS = $(PLUGIN).o menuundelete.o menusetup.o i18n.o vdrtools.o
-
-ifeq ($(shell test $(VDRVERSNUM) -lt 10307 ; echo $$?),0)
-  OBJS += menuitemtext.o
+OBJS = $(PLUGIN).o i18n.o menuundelete.o menusetup.o vdrtools.o menueditkeys.o menudispkey.o
+ifeq ($(shell test $(VDRVERSNUM) -lt 10308 ; echo $$?),0)
+  OBJS += menutext.o
 endif
 
 ### Implicit rules:
@@ -98,7 +94,7 @@ libvdr-$(PLUGIN).so: $(OBJS)
 	$(CXX) $(CXXFLAGS) -shared $(OBJS) -o $@
 	@cp $@ $(LIBDIR)/$@.$(VDRVERSION)
 
-dist:	clean
+dist: clean
 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
 	@mkdir $(TMPDIR)/$(ARCHIVE)
 	@cp -a * $(TMPDIR)/$(ARCHIVE)
