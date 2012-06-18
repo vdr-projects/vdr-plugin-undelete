@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: menuundelete.c 0.2 2004/10/10 12:23:20 hflor Exp $
+ * $Id: menuundelete.c 0.3 2005/10/04 12:35:20 hflor Exp $
  */
 
 #include "menuundelete.h"
@@ -194,7 +194,11 @@ void cMenuRecordingSelect::SetHelpKeys(void)
     else
     {
       cRecording *recording = GetRecording(ri);
+#if VDRVERSNUM >= 10325
+      SetHelp(NULL, tr("Undelete"), tr("Delete"), (recording && recording->Info()->Title() && *recording->Info()->Title()) ? tr("Summary") : NULL);
+#else
       SetHelp(NULL, tr("Undelete"), tr("Delete"), (recording && recording->Summary() && *recording->Summary()) ? tr("Summary") : NULL);
+#endif
     }
   } else
   {
@@ -290,11 +294,23 @@ eOSState cMenuRecordingSelect::Summary(void)
   if (ri && !ri->IsDirectory())
   {
     cRecording *recording = GetRecording(ri);
+#if VDRVERSNUM >= 10325
+    if (recording && recording->Info()->Title() && *recording->Info()->Title())
+#else
     if (recording && recording->Summary() && *recording->Summary())
+#endif
 #if VDRVERSNUM >= 10307
+#if VDRVERSNUM >= 10325
+      return AddSubMenu(new cMenuText(tr("Summary"), recording->Info()->Title()));
+#else
       return AddSubMenu(new cMenuText(tr("Summary"), recording->Summary()));
+#endif
+#else
+#if VDRVERSNUM >= 10325
+      return AddSubMenu(new cMenuItemText(tr("Summary"), recording->Info()->Title()));
 #else
       return AddSubMenu(new cMenuItemText(tr("Summary"), recording->Summary()));
+#endif
 #endif
   }
   return osContinue;
@@ -423,7 +439,11 @@ cMenuUndelete::~cMenuUndelete()
   
 #if VDRVERSNUM >= 10311
   if (SalvageRecording)
+#if VDRVERSNUM >= 10333
+    Recordings.Update();
+#else
     Recordings.TriggerUpdate();
+#endif
 #endif
 }
 

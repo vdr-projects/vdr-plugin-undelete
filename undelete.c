@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: undelete.c 0.2 2004/10/10 12:23:20 hflor Exp $
+ * $Id: undelete.c 0.3 2005/10/04 14:35:20 hflor Exp $
  */
 
 #include "undelete.h"
@@ -15,7 +15,7 @@
 #include <ctype.h>
 #include <vdr/recording.h>
 
-static const char *VERSION           = "0.0.2";
+static const char *VERSION           = "0.0.3";
 static const char *DESCRIPTION       = "undelete for recordings";
 
 // Global variables that control the overall behaviour:
