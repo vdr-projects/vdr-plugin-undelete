@@ -198,7 +198,11 @@ class cPluginUndelete : public cPlugin {
 private:
   // Add any member variables or functions you may need here.
   void FreeKeyNames(void);
+#if VDRVERSNUM >= 10507
+  char* OSDLanguage;
+#else
   int OSDLanguage;
+#endif
   void TestAndSetOSDLanguage(void);
   bool ProcessArg(int argc, char *argv[]);
 #ifdef UND_Debug
