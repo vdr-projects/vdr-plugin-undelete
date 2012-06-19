@@ -422,7 +422,7 @@ eOSState cMenuRecordingSelect::FunctionCall(int FunctionNumber)
     case 7:   recording = GetRecording(item);
 #if VDRVERSNUM >= 10325
               if (recording && recording->Info() && recording->Info()->Description() && *recording->Info()->Description())
-                state = AddSubMenu(new cMenuText(tr("Summary"), recording->Info()->Description()));
+                state = AddSubMenu(new cMenuText(tr("Info"), recording->Info()->Description()));
 #else 
               if (recording && recording->Summary() && *recording->Summary())
                 state = AddSubMenu(new cMenuText(tr("Summary"), recording->Summary()));

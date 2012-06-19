@@ -286,7 +286,11 @@ void cPluginUndelete::TestAndSetOSDLanguage(void)
     FunctionHotKey[4] = tr("Display$purge all");
     FunctionHotKey[5] = tr("Display$salvage all");
     FunctionHotKey[6] = tr("Open");
+#if VDRVERSNUM >= 10325
+    FunctionHotKey[7] = tr("Info");
+#else
     FunctionHotKey[7] = tr("Summary");
+#endif
     FunctionHotKey[8] = tr("Display$<--1");
     FunctionHotKey[9] = tr("Display$2-->");
     FunctionHotKey[10] = tr("Display$disp. keys");
