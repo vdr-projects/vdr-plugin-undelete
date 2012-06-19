@@ -43,5 +43,6 @@ VDR Plugin 'undelete' Revision History
 
 - corrected the HISTORY header
 - edit the README file
+- merge patch for gcc-4.4 from Holger Schvestka <hotzenplotz5@gmx.de>
 
 

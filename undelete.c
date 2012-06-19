@@ -934,10 +934,10 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
             if (verbose.u)
               isyslog("%s: undelete recording (%s)", plugin_name, recording->FileName());
             cString NewName = recording->FileName();
-            char *ext = strrchr(NewName, '.');
+            const char *ext = strrchr(NewName, '.');
             if (!strcmp(ext, DELEXT))
             {
-              strncpy(ext, RECEXT, strlen(ext));
+              strncpy((char *)ext, RECEXT, strlen(ext));
               if (!access(NewName, F_OK))
               {
                 if (verbose.u)
