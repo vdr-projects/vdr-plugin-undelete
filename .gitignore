@@ -1,0 +1,7 @@
+*.bak
+*.o
+*.so
+libvdr-undelete.so*
+*.tar.gz
+*.tgz
+*~
