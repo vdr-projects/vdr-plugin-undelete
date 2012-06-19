@@ -1,4 +1,4 @@
-VDR Plugin 'playlist' Revision History
+VDR Plugin 'undelete' Revision History
 --------------------------------------
 
 2004-10-08: Version 0.0.1
@@ -38,3 +38,10 @@ VDR Plugin 'playlist' Revision History
 - add French translation (thanks to pat@vdrportal.de)
 - Change translation for Keys with numbers
 - add check for count of *.vdr files
+
+2012-06-18  Martin Dummer  <martin.dummer@gmx.net>
+
+- corrected the HISTORY header
+- edit the README file
+
+
