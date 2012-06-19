@@ -45,5 +45,6 @@ VDR Plugin 'undelete' Revision History
 - edit the README file
 - merge patch for gcc-4.4 from Holger Schvestka <hotzenplotz5@gmx.de>
 - merge patch with changes for VDR >= 1.5.7 from Stone <syphyr@gmail.com>
+- merge patch with changes for VDR >= 1.7.3 from Thomas Günther <tom@toms-cafe.de>
 
 
