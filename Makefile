@@ -1,11 +1,13 @@
 #
 # Makefile for a Video Disk Recorder plugin
 #
-# $Id: Makefile 0.4 2005/11/07 16:47:18 hflor Exp $
+# $Id$
 
 # The official name of this plugin.
 # This name will be used in the '-P...' option of VDR to load the plugin.
 # By default the main source file also carries this name.
+# IMPORTANT: the presence of this macro is important for the Make.config
+# file. So it must be defined, even if it is not used here!
 #
 PLUGIN = undelete
 
@@ -20,19 +22,22 @@ CXXFLAGS ?= -fPIC -O2 -Wall -Woverloaded-virtual
 
 ### The directory environment:
 
-DVBDIR = ../../../../DVB
-VDRDIR = ../../..
-LIBDIR = ../../lib
-TMPDIR = /tmp
+VDRDIR ?= ../../..
+LIBDIR ?= ../../lib
+TMPDIR ?= /tmp
+
+### Make sure that necessary options are included:
+
+include $(VDRDIR)/Make.global
 
 ### Allow user defined options to overwrite defaults:
 
 -include $(VDRDIR)/Make.config
 
-### The version number of VDR (taken from VDR's "config.h"):
+### The version number of VDR's plugin API (taken from VDR's "config.h"):
 
-VDRVERSION = $(shell grep 'define VDRVERSION ' $(VDRDIR)/config.h | awk '{ print $$3 }' | sed -e 's/"//g')
 VDRVERSNUM = $(shell grep 'define VDRVERSNUM ' $(VDRDIR)/config.h | awk '{ print $$3 }' | sed -e 's/"//g')
+APIVERSION = $(shell sed -ne '/define APIVERSION/s/^.*"\(.*\)".*$$/\1/p' $(VDRDIR)/config.h)
 
 ### The name of the distribution archive:
 
@@ -41,7 +46,7 @@ PACKAGE = vdr-$(ARCHIVE)
 
 ### Includes and Defines (add further entries here):
 
-INCLUDES += -I$(VDRDIR)/include -I$(DVBDIR)/include
+INCLUDES += -I$(VDRDIR)/include
 
 DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
 
@@ -68,6 +73,7 @@ endif
 ### The object files (add further files here):
 
 OBJS = $(PLUGIN).o i18n.o menuundelete.o menusetup.o vdrtools.o menueditkeys.o menudispkey.o
+#FIXME
 ifeq ($(shell test $(VDRVERSNUM) -lt 10308 ; echo $$?),0)
   OBJS += menutext.o
 endif
@@ -77,9 +83,9 @@ endif
 %.o: %.c
 	$(CXX) $(CXXFLAGS) -c $(DEFINES) $(INCLUDES) $<
 
-# Dependencies:
+### Dependencies:
 
-MAKEDEP = g++ -MM -MG
+MAKEDEP = $(CXX) -MM -MG
 DEPFILE = .dependencies
 $(DEPFILE): Makefile
 	@$(MAKEDEP) $(DEFINES) $(INCLUDES) $(OBJS:%.o=%.c) > $@
@@ -91,8 +97,8 @@ $(DEPFILE): Makefile
 all: libvdr-$(PLUGIN).so
 
 libvdr-$(PLUGIN).so: $(OBJS)
-	$(CXX) $(CXXFLAGS) -shared $(OBJS) -o $@
-	@cp $@ $(LIBDIR)/$@.$(VDRVERSION)
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared $(OBJS) -o $@
+	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
 
 dist: clean
 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
@@ -103,4 +109,4 @@ dist: clean
 	@echo Distribution package created as $(PACKAGE).tgz
 
 clean:
-	@-rm -f $(OBJS) $(DEPFILE) *.o *.so *.tgz *.tar.gz core* *~ *.bak
+	@-rm -f $(OBJS) $(DEPFILE) *.so *.tgz core* *~ *.bak
