@@ -1,0 +1,514 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@tvdr.de>
+# This file is distributed under the same license as the VDR package.
+# Jean-Claude Repetto <jc@repetto.org>, 2001
+# Olivier Jacques <jacquesolivier@hotmail.com>, 2003
+# Gregoire Favre <greg@magma.unil.ch>, 2003
+# Nicolas Huillard <nhuillard@e-dition.fr>, 2005
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: martin.dummer@gmx.net\n"
+"POT-Creation-Date: 2012-06-27 16:35+0200\n"
+"PO-Revision-Date: 2012-06-27 16:35+0200\n"
+"Last-Translator: Nicolas Huillard <nhuillard@e-dition.fr>\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: menudispkey.c:31
+msgid "Menu$assigned keys"
+msgstr "Touches assignées"
+
+#: menudispkey.c:50
+msgid "Edit"
+msgstr ""
+
+#: menudispkey.c:61
+msgid "Help$key\tfunction"
+msgstr "Touch\tFonction"
+
+#: menudispkey.c:67
+msgid "Help$OK"
+msgstr "OK"
+
+#: menudispkey.c:69
+msgid "Help$numerickey"
+msgstr "Touch numérique"
+
+#: menusetup.c:147
+msgid "Setup$Display deleted recordings now"
+msgstr "Afficher les enregistrements effacés"
+
+#: menusetup.c:149
+msgid "Setup$Preferr Command Line Parameter"
+msgstr "La ligne de commande a priorité"
+
+#: menusetup.c:151
+msgid "Setup$Visible in Mainmenu"
+msgstr "Visible dans le menu principal"
+
+#: menusetup.c:153
+msgid "Setup$  Name for Mainmenu"
+msgstr "  Nom afficher pour le menu principal"
+
+#: menusetup.c:155
+msgid "Setup$Confirm purge deleted recordings"
+msgstr "Confirmer effacer enregistrement"
+
+#: menusetup.c:157
+msgid "Setup$Confirm purge directories"
+msgstr "Confirmer effacer dossier"
+
+#: menusetup.c:159
+msgid "Setup$Confirm purge all deleted recordings"
+msgstr "Confirmation effacer tout"
+
+#: menusetup.c:161
+msgid "Setup$Confirm salvage deleted recordings"
+msgstr "Confirmer restaurer enregistrement"
+
+#: menusetup.c:163
+msgid "Setup$Confirm salvage directories"
+msgstr "Confirmer restaurer dossier"
+
+#: menusetup.c:165
+msgid "Setup$Confirm salvage all deleted recordings"
+msgstr "Confirmer restaurer tout"
+
+#: menusetup.c:167
+msgid "Setup$Purgeline position"
+msgstr "Position de la ligne d'éffacement"
+
+#: menusetup.c:169
+msgid "Setup$  Display bottom purge ex lines"
+msgstr "  Nombre de ligne d'affichage d'effacement"
+
+#: menusetup.c:171
+msgid "Setup$Salvageline position"
+msgstr "Position de la ligne de restauration"
+
+#: menusetup.c:173
+msgid "Setup$  Display bottom salvage ex lines"
+msgstr "  Nombre de ligne d'affichage"
+
+#: menusetup.c:175 undelete.c:114 undelete.c:142 undelete.c:275
+msgid "Choise$purge"
+msgstr "effacer"
+
+#: menusetup.c:175 undelete.c:114 undelete.c:142 undelete.c:276
+msgid "Choise$salvage"
+msgstr "restaurer"
+
+#: menusetup.c:175
+msgid "Setup$  inward lines"
+msgstr "  Ligne interrieur"
+
+#: menusetup.c:178
+msgid "Setup$Change assigned functionkeys"
+msgstr "Changer la configuration des touches"
+
+#: menusetup.c:186
+#, c-format
+msgid "Setup$  Key for function-%s"
+msgstr "  Touch pour fonction-%s"
+
+#: menusetup.c:190
+msgid "Setup$  ** Spezial handled keys **"
+msgstr "  ** Touche spéciale **"
+
+#: menusetup.c:193
+msgid "Setup$  OK-key function"
+msgstr "  Fonction touch OK"
+
+#: menusetup.c:196
+msgid "Setup$  Numerickey select the entry and"
+msgstr "  Choix avec numéro et"
+
+#: menusetup.c:199
+msgid "Setup$Verbose Log Mode"
+msgstr "Protokolle mode complet"
+
+#: menusetup.c:240
+#, c-format
+msgid "Error$Key for funtion %s and %s identical."
+msgstr "Touche de %s et %s sont les mêmes."
+
+#: menusetup.c:259
+msgid "Setup$Select"
+msgstr "Choix"
+
+#: menuundelete.c:128 menuundelete.c:130 menuundelete.c:565
+msgid "Deleted Recordings"
+msgstr "Enregistrements effacés"
+
+#: menuundelete.c:137 menuundelete.c:596
+msgid "Display$prepare recording display..."
+msgstr "L'affichage liste en préparation..."
+
+#: menuundelete.c:217
+msgid "Error while accessing recording!"
+msgstr ""
+
+#: menuundelete.c:239 menuundelete.c:243 menuundelete.c:251 menuundelete.c:255
+msgid "Display$Purge all records ..."
+msgstr "Effacer tous les enregistrement définitivement ..."
+
+#: menuundelete.c:241 menuundelete.c:245 menuundelete.c:249 menuundelete.c:253
+msgid "Display$Salavge all records ..."
+msgstr "Restaurer tout les enregistrements ..."
+
+#: menuundelete.c:352
+msgid "Question$Purge recording?"
+msgstr ""
+
+#: menuundelete.c:352
+msgid "Question$Purge recordings in diretory?"
+msgstr ""
+
+#: menuundelete.c:368
+msgid "Question$Salvage recording?"
+msgstr "Restaurer enregistrement?"
+
+#: menuundelete.c:368
+msgid "Question$Salvage recordings in directory?"
+msgstr "Restaurer l'enregistrement dans dossier?"
+
+#: menuundelete.c:381
+msgid "Question$Purge all recordings?"
+msgstr ""
+
+#: menuundelete.c:394
+msgid "Question$Salvage all recordings?"
+msgstr "Restaurer tout les enregistrements?"
+
+#: menuundelete.c:425 undelete.c:290
+msgid "Info"
+msgstr ""
+
+#: menuundelete.c:428 undelete.c:292
+msgid "Summary"
+msgstr ""
+
+#: menuundelete.c:624
+msgid "Display$please wait ..."
+msgstr "attendez, merci"
+
+#: menuundelete.c:665
+msgid "Error$Recording with the same name exists!"
+msgstr "Des enregistrements avec le même nom existent!"
+
+#: menuundelete.c:694
+msgid "Error$error while read last filenumber"
+msgstr ""
+
+#: menuundelete.c:708
+#, c-format
+msgid "Error$error accessing vdrfile %03d"
+msgstr ""
+
+#: menuundelete.c:718
+msgid "Error$error accessing indexfile"
+msgstr ""
+
+#: undelete.c:269 undelete.c:273 undelete.c:297
+msgid "Choise$none"
+msgstr "sans"
+
+#: undelete.c:270
+msgid "Choise$top"
+msgstr "en haut"
+
+#: undelete.c:271
+msgid "Choise$bottom"
+msgstr "en bas"
+
+#: undelete.c:272
+msgid "Choise$top and bottom"
+msgstr "en haut & en bas"
+
+#: undelete.c:274
+msgid "Choise$open/summary"
+msgstr "Ouvrir/contenu"
+
+#: undelete.c:277
+msgid "Choise$purge all"
+msgstr "effacer tout"
+
+#: undelete.c:278
+msgid "Choise$salvage all"
+msgstr "restaurer tout"
+
+#: undelete.c:279
+msgid "Choise$open"
+msgstr "ouvrir"
+
+#: undelete.c:280
+msgid "Choise$summary"
+msgstr "Contenu"
+
+#: undelete.c:281
+msgid "Choise$switch hotkeys to 1"
+msgstr "Choix touche 1"
+
+#: undelete.c:282
+msgid "Choise$switch hotkeys to 2"
+msgstr "Choix touche 2"
+
+#: undelete.c:283
+msgid "Choise$Display keys"
+msgstr "Affiche des touches"
+
+#: undelete.c:284
+msgid "Display$purge"
+msgstr "Effacer"
+
+#: undelete.c:285
+msgid "Display$salvage"
+msgstr "Restaurer"
+
+#: undelete.c:286
+msgid "Display$purge all"
+msgstr "effacer tout"
+
+#: undelete.c:287
+msgid "Display$salvage all"
+msgstr "restaurer tout"
+
+#: undelete.c:288
+msgid "Open"
+msgstr ""
+
+#: undelete.c:294
+msgid "Display$<--1"
+msgstr "<--1"
+
+#: undelete.c:295
+msgid "Display$2-->"
+msgstr "2-->"
+
+#: undelete.c:296
+msgid "Display$disp. keys"
+msgstr "Afficher les touches"
+
+#: undelete.c:299 vdrtools.c:134
+msgid "Red"
+msgstr ""
+
+#: undelete.c:300 vdrtools.c:135
+msgid "Green"
+msgstr ""
+
+#: undelete.c:301 vdrtools.c:136
+msgid "Yellow"
+msgstr ""
+
+#: undelete.c:302 vdrtools.c:137
+msgid "Blue"
+msgstr ""
+
+#: undelete.c:307
+msgid "Choise$User"
+msgstr "Utilisateur"
+
+#: undelete.c:406
+msgid ""
+"  -m        --visible_in_mainmenu     Show the plugin in the mainmenu\n"
+"  -M        --hide_in_mainmenu        Hide the plugin in the mainmenu\n"
+"                                      You can start the Plugin in the setupmenu\n"
+"  -n Name   --mainmenu_name=Name      Select Name for entry in the mainmenu\n"
+"                                      (set also -m)\n"
+"  -c        --confirm_purge_rec       show confirmation for purge recording\n"
+"  -C        --not_confirm_purge_rec   purge recording without confirmation\n"
+"  -d        --confirm_purge_dir       show confirmation for purge directory\n"
+"  -D        --not_confirm_purge_dir   purge directory without confirmation\n"
+"  -e        --confirm_purge_all       show confirmation for purge all function\n"
+"  -E        --not_confirm_purge_all   purge all function without confirmation\n"
+"  -s        --confirm_salvage_rec     show confirmation for salvage recording\n"
+"  -S        --not_confirm_salvage_rec salvage recording without confirmation\n"
+"  -t        --confirm_salvage_dir     show confirmation for salvage directory\n"
+"  -T        --not_confirm_salvage_dir salvage directory without confirmation\n"
+"  -u        --confirm_salvage_all     show confirmation for salvage all function\n"
+"  -U        --not_confirm_salvage_all salvage all function without confirmation\n"
+"  -v        --verbose                 Enable more logging\n"
+"  -V        --noverbose               Disable more loggig\n"
+"            --nosetup_commandline     Hide the 'Preferr Command Line Parameter'\n"
+"                                      form setup-menu\n"
+"  @config-file                        Read also parameters from this file\n"
+"  note: recording means deleted recordings (there not show in VDR)"
+msgstr "Utilisateur"
+
+#: undelete.c:572
+msgid "Menu$Undelete recordings"
+msgstr "Restaurer enregistrement"
+
+#: undelete.c:793
+msgid "Bytes"
+msgstr ""
+
+#: vdrtools.c:127
+msgid "Up"
+msgstr ""
+
+#: vdrtools.c:128
+msgid "Down"
+msgstr ""
+
+#: vdrtools.c:129
+msgid "Menu"
+msgstr ""
+
+#: vdrtools.c:130
+msgid "Ok"
+msgstr ""
+
+#: vdrtools.c:131
+msgid "Back"
+msgstr ""
+
+#: vdrtools.c:132
+msgid "Left"
+msgstr ""
+
+#: vdrtools.c:133
+msgid "Right"
+msgstr ""
+
+#: vdrtools.c:148
+msgid "Play"
+msgstr ""
+
+#: vdrtools.c:149
+msgid "Pause"
+msgstr ""
+
+#: vdrtools.c:150
+msgid "Stop"
+msgstr ""
+
+#: vdrtools.c:151
+msgid "Record"
+msgstr ""
+
+#: vdrtools.c:152
+msgid "FastFwd"
+msgstr ""
+
+#: vdrtools.c:153
+msgid "FastRew"
+msgstr ""
+
+#: vdrtools.c:154
+msgid "Power"
+msgstr ""
+
+#: vdrtools.c:155
+msgid "ChanUp"
+msgstr ""
+
+#: vdrtools.c:156
+msgid "ChanDn"
+msgstr ""
+
+#: vdrtools.c:157
+msgid "VolUp"
+msgstr ""
+
+#: vdrtools.c:158
+msgid "VolDn"
+msgstr ""
+
+#: vdrtools.c:159
+msgid "Mute"
+msgstr ""
+
+#: vdrtools.c:160
+msgid "Schedule"
+msgstr ""
+
+#: vdrtools.c:161
+msgid "Channels"
+msgstr ""
+
+#: vdrtools.c:162
+msgid "Timers"
+msgstr ""
+
+#: vdrtools.c:163
+msgid "Recordings"
+msgstr ""
+
+#: vdrtools.c:164
+msgid "Setup"
+msgstr ""
+
+#: vdrtools.c:165
+msgid "Commands"
+msgstr ""
+
+#: vdrtools.c:166
+msgid "User1"
+msgstr ""
+
+#: vdrtools.c:167
+msgid "User2"
+msgstr ""
+
+#: vdrtools.c:168
+msgid "User3"
+msgstr ""
+
+#: vdrtools.c:169
+msgid "User4"
+msgstr ""
+
+#: vdrtools.c:170
+msgid "User5"
+msgstr ""
+
+#: vdrtools.c:171
+msgid "User6"
+msgstr ""
+
+#: vdrtools.c:172
+msgid "User7"
+msgstr ""
+
+#: vdrtools.c:173
+msgid "User8"
+msgstr ""
+
+#: vdrtools.c:174
+msgid "User9"
+msgstr ""
+
+#: vdrtools.c:175
+msgid "none"
+msgstr ""
+
+#: vdrtools.c:176
+msgid "Kbd"
+msgstr ""
+
+#: vdrtools.c:177
+msgid "Salvage"
+msgstr "Restaurer"
+
+#: vdrtools.c:178
+msgid "Purge"
+msgstr "Vider"
+
+#: vdrtools.c:179
+msgid "DeleteLine"
+msgstr "Effacer ligne"
+
+#: vdrtools.c:180
+msgid "HelpKeys"
+msgstr "Touche d'aide"
+
+#: vdrtools.c:181
+msgid "unknow"
+msgstr "inconnu"

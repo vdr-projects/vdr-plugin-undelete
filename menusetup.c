@@ -9,7 +9,6 @@
 #include "menusetup.h"
 #include "undelete.h"
 #include "menuundelete.h"
-#include "i18n.h"
 #include "vdrtools.h"
 #include "menueditkeys.h"
 #include "menunoselectitem.h"

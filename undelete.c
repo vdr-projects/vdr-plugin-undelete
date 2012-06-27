@@ -9,7 +9,6 @@
 #include "undelete.h"
 #include "menuundelete.h"
 #include "menusetup.h"
-#include "i18n.h"
 #include "vdrtools.h"
 #include <getopt.h>
 #include <ctype.h>
@@ -467,7 +466,7 @@ bool cPluginUndelete::ProcessArgs(int argc, char *argv[])
 bool cPluginUndelete::Start(void)
 {
   // Start any background activities the plugin shall perform.
-  RegisterI18n(Phrases);
+  // RegisterI18n(Phrases);
   TestAndSetOSDLanguage();
 
   d1syslog("cPluginUndelete::Start", "undeleteconfigfile=%s", undeleteconfigfile.u);

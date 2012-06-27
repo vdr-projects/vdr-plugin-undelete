@@ -10,7 +10,6 @@
 #include "undelete.h"
 #include "menunoselectitem.h"
 #include "menusetup.h"
-#include "i18n.h"
 #include <vdr/osd.h>
 #include <vdr/osdbase.h>
 #include <typeinfo>

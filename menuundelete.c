@@ -12,7 +12,6 @@
 #endif
 #include "undelete.h"
 #include "menudispkey.h"
-#include "i18n.h"
 #include "vdrtools.h"
 #include <vdr/interface.h>
 #include <vdr/videodir.h>
