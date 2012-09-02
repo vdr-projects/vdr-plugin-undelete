@@ -30,7 +30,11 @@ cMenuRecordingSelectItem::cMenuRecordingSelectItem(cRecording *Recording, int Le
 #endif
   filename = strdup(Recording->FileName());
   totalEntries = newEntries = 0;
+#if VDRVERSNUM >= 10728
+  start = Recording->Start();
+#else
   start = Recording->start;
+#endif
   SetText(Recording->Title('\t', true, Level));
   if ((isdir = (*Text() == '\t')))
     name = strdup(Text() + 2);

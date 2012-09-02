@@ -54,3 +54,8 @@ VDR Plugin 'undelete' Revision History
 - cleanup the Makefile, changes are inspired from VDR sample plugin Makefile
 - remove file i18n.c.org (not needed)
 - convert i18n handling to gettext
+
+2012-09-02  Martin Dummer  <martin.dummer@gmx.net>
+
+- menuundelete.c: add compile fix for vdr >=1.7.28
+  thanks to user "tv-user" on http://projects.vdr-developer.org/ 
