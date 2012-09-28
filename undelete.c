@@ -110,7 +110,7 @@ void DisplaySetings(void)
     if (functionline_b_e[1].u == 0x3)
       isyslog("%s: num entry for display        = [ %c%c%c ] %d", IsDefault(functionline_num[1]), functionline_num[1].u);
     if ((functionline_b_e[0].u & functionline_b_e[1].u & 0x1) != 0x0 || (functionline_b_e[0].u & functionline_b_e[1].u & 0x2) != 0x0)
-      isyslog("%s: inward lines                 = [ %c%c%c ] %s", IsDefault(firstsalvage), firstsalvage.u ? tr("Choise$salvage") : tr("Choise$purge"));
+      isyslog("%s: inward lines                 = [ %c%c%c ] %s", IsDefault(firstsalvage), firstsalvage.u ? tr("Choice$salvage") : tr("Choice$purge"));
     for (int i = 2; i < MaxFunctionName; i++)
       isyslog("%s: key for %-20s = [ %c%c%c ] %s", plugin_name, FunctionName[i], IsDefaultS(functionkey[i]), KeysName[functionkey[i].u]);
     isyslog("%s: spec. function for OK-key    = [ %c%c%c ] %s", IsDefault(okkey), FunctionName[okkey.u]);
@@ -138,7 +138,7 @@ void DisplaySetings(void)
     if (functionline_b_e[1].u == 0x3)
       dsyslog("%s: num entry for display        = [ %c%c%c ] %d", IsDefault(functionline_num[1]), functionline_num[1].u);
     if ((functionline_b_e[0].u & functionline_b_e[1].u & 0x1) != 0x0 || (functionline_b_e[0].u & functionline_b_e[1].u & 0x2) != 0x0)
-      dsyslog("%s: inward lines                 = [ %c%c%c ] %s", IsDefault(firstsalvage), firstsalvage.u ? tr("Choise$salvage") : tr("Choise$purge"));
+      dsyslog("%s: inward lines                 = [ %c%c%c ] %s", IsDefault(firstsalvage), firstsalvage.u ? tr("Choice$salvage") : tr("Choice$purge"));
     for (int i = 2; i < MaxFunctionName; i++)
       dsyslog("%s: key for %-20s = [ %c%c%c ] %s", plugin_name, FunctionName[i], IsDefaultS(functionkey[i]), KeysName[functionkey[i].u]);
     dsyslog("%s: spec. function for OK-key    = [ %c%c%c ] %s", IsDefault(okkey), FunctionName[okkey.u]);
@@ -265,21 +265,21 @@ void cPluginUndelete::TestAndSetOSDLanguage(void)
   if (OSDLanguage != Setup.OSDLanguage) {
     FreeKeyNames();
     OSDLanguage = Setup.OSDLanguage;
-    FunctionLine[0] = tr("Choise$none");
-    FunctionLine[1] = tr("Choise$top");
-    FunctionLine[2] = tr("Choise$bottom");
-    FunctionLine[3] = tr("Choise$top and bottom");
-    FunctionName[0] = tr("Choise$none");
-    FunctionName[1] = tr("Choise$open/summary");
-    FunctionName[2] = tr("Choise$purge");
-    FunctionName[3] = tr("Choise$salvage");
-    FunctionName[4] = tr("Choise$purge all");
-    FunctionName[5] = tr("Choise$salvage all");
-    FunctionName[6] = tr("Choise$open");
-    FunctionName[7] = tr("Choise$summary");
-    FunctionName[8] = tr("Choise$switch hotkeys to 1");
-    FunctionName[9] = tr("Choise$switch hotkeys to 2");
-    FunctionName[10] = tr("Choise$Display keys");
+    FunctionLine[0] = tr("Choice$none");
+    FunctionLine[1] = tr("Choice$top");
+    FunctionLine[2] = tr("Choice$bottom");
+    FunctionLine[3] = tr("Choice$top and bottom");
+    FunctionName[0] = tr("Choice$none");
+    FunctionName[1] = tr("Choice$open/summary");
+    FunctionName[2] = tr("Choice$purge");
+    FunctionName[3] = tr("Choice$salvage");
+    FunctionName[4] = tr("Choice$purge all");
+    FunctionName[5] = tr("Choice$salvage all");
+    FunctionName[6] = tr("Choice$open");
+    FunctionName[7] = tr("Choice$summary");
+    FunctionName[8] = tr("Choice$switch hotkeys to 1");
+    FunctionName[9] = tr("Choice$switch hotkeys to 2");
+    FunctionName[10] = tr("Choice$Display keys");
     FunctionHotKey[2] = tr("Display$purge");
     FunctionHotKey[3] = tr("Display$salvage");
     FunctionHotKey[4] = tr("Display$purge all");
@@ -293,7 +293,7 @@ void cPluginUndelete::TestAndSetOSDLanguage(void)
     FunctionHotKey[8] = tr("Display$<--1");
     FunctionHotKey[9] = tr("Display$2-->");
     FunctionHotKey[10] = tr("Display$disp. keys");
-    KeysName[0] = strdup(tr("Choise$none"));
+    KeysName[0] = strdup(tr("Choice$none"));
     for (int i = 1; i <= 2; i++) {
       asprintf(&KeysName[i], "%s (%d)", tr("Red"), i);
       asprintf(&KeysName[i+2], "%s (%d)", tr("Green"), i);
@@ -303,7 +303,7 @@ void cPluginUndelete::TestAndSetOSDLanguage(void)
     for (int i = 0; i <= 9; i++)
       asprintf(&KeysName[i+9], "%d", i);
     for (int i = 1; i <= 9; i++)
-      asprintf(&KeysName[i+18], "%s %d", tr("Choise$User"), i);
+      asprintf(&KeysName[i+18], "%s %d", tr("Choice$User"), i);
   }
 }
 
@@ -670,11 +670,11 @@ const char **cPluginUndelete::SVDRPHelpPages(void)
 {
   static const char *HelpPages[] = {
   "LSTD    [ <number> ]\n"
-  "        List deleted recordings. Without option, all deleted recordings are\n"
-  "        listed.\n"
+  "        List deleted recordings.\n"
+  "        Without option, all deleted recordings are listed.\n"
   "        Otherwise the information for the given deleted recording is listed.",
   "SIZED   [ -h ]\n"
-  "        Caclulate the size of deleted recordings. Result is in Bytes or\n"
+  "        Calculate the size of deleted recordings. Result is in Bytes or\n"
   "        with option -h in human readable format.",
   "RMDIR\n"
   "        Start remove empty directory in the background",
@@ -785,7 +785,7 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
       if (strcasecmp(Option, "-h"))
       {
         ReplyCode = 501;
-        return cString::sprintf("Error in parameter \"%s\" (only -h allow)", Option);
+        return cString::sprintf("Error in parameter \"%s\" (only -h allowed)", Option);
       } else
       {
         float llsizetmp = llsize;
@@ -795,7 +795,7 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
           llsizetmp /= 1024;
         int decimalplaces = Unit < 2 ? 0 : Unit > 2 ? 2 : 1;
         ReplyCode = 904;
-        return cString::sprintf("size of deleted recordings are %1.*f %s", decimalplaces, llsizetmp, strUnit[Unit]);
+        return cString::sprintf("size of deleted recordings is %1.*f %s", decimalplaces, llsizetmp, strUnit[Unit]);
       }
     else
     {
@@ -808,12 +808,12 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
     if (oRemoveThread.ActiveWithCancel())
     {
       ReplyCode = 554;
-      return "thread for remove empty directory alredy active";
+      return "thread for removing empty directories already active";
     } else
     {
       oRemoveThread.Start();
       ReplyCode = 905;
-      return "thread for remove empty directory is started";
+      return "thread for removing empty directories is started";
     }
   } else if CMD("PURGE")
   {
@@ -842,8 +842,8 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
               isyslog("%s: purge deleted recording (%s)", plugin_name, recording->FileName());
             if (!RemoveVideoFile(recording->FileName()))
             {
-              esyslog("%s: Error while remove deleted recording (%s)", plugin_name, recording->FileName());
-              return cString::sprintf("error while purge the deleted recording \"%s\"  [%s]", Option, recording->Title());
+              esyslog("%s: Error while removing deleted recording (%s)", plugin_name, recording->FileName());
+              return cString::sprintf("error while purging the deleted recording \"%s\"  [%s]", Option, recording->Title());
             }
             NextRemoveThreadStart = time(NULL) + 600;
             char *temp;
@@ -851,7 +851,7 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
             freenull(SVDRP_Process);
             SVDRP_Process = temp;
             ReplyCode = 906;
-            return cString::sprintf("purge of deleted recording \"%s\" [%s] is successful", Option, recording->Title());
+            return cString::sprintf("purge of deleted recording \"%s\" [%s] was successful", Option, recording->Title());
           } else
             return cString::sprintf("deleted recording \"%s\" not found%s", Option, DeletedRecordings.Count() ? "" : " (use LSTD before purge)");
         }
@@ -895,15 +895,15 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
         bool recordingsavailable = DeletedRecordings.Count();
         DeletedRecordings.Clear();
         if (recordingsavailable)
-          return cString::sprintf("%snot all deleted recordings are purged (see lstd)", list ? (const char *)cString(list, true) : "");
+          return cString::sprintf("%snot all deleted recordings are purged (see LSTD)", list ? (const char *)cString(list, true) : "");
         else if (list)
         {
           ReplyCode = 907;
-          return cString::sprintf("%swarings while purge deleted recordings", (const char *)cString(list, true));
+          return cString::sprintf("%swarnings while purge deleted recordings", (const char *)cString(list, true));
         } else
         {
           ReplyCode = 908;
-          return "all deleted recordings are purged and thread for remove empty directory is started";
+          return "all deleted recordings were purged and thread for removing empty directories is started";
         }
       } else
       {
@@ -913,7 +913,7 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
     } else
     {
       ReplyCode = 501;
-      return "number of deleted recoding for purge missing";
+      return "number of deleted recording for purge missing";
     }
   } else if CMD("SALVAGE")
   {
@@ -954,8 +954,8 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
               {
                 if (!RenameVideoFile(recording->FileName(), (const char *)NewName))
                 {
-                  esyslog("%s: Error while rename deleted recording (%s) to (%s)", plugin_name, recording->FileName(), (const char *)NewName);
-                  return cString::sprintf("error while rename deleted recording \"%s\" [%s]", Option, recording->Title());
+                  esyslog("%s: Error while renaming deleted recording (%s) to (%s)", plugin_name, recording->FileName(), (const char *)NewName);
+                  return cString::sprintf("error while renaming deleted recording \"%s\" [%s]", Option, recording->Title());
                 }
               }
             }
@@ -980,7 +980,7 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
               index->Get(LastFrame, &FileNumber, &FileOffset);
               delete index;
               if (FileNumber == 0)
-                return cString::sprintf("error while read last filenumber for \"%s\" [%s]", Option, recording->Title());
+                return cString::sprintf("error while reading last filenumber for \"%s\" [%s]", Option, recording->Title());
               for (int i = 1; i <= FileNumber; i++) {
 #if VDRVERSNUM >= 10703
                 asprintf(&temp, recording->IsPesRecording() ? "%s/%03d.vdr" : "%s/%05d.ts", (const char *)NewName, i);
@@ -1040,15 +1040,15 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
         bool recordingsavailable = DeletedRecordings.Count();
         DeletedRecordings.Clear();
         if (recordingsavailable)
-          return cString::sprintf("%snot all deleted recordings are salvaged (see lstd)", list ? (const char *)cString(list, true) : "");
+          return cString::sprintf("%snot all deleted recordings were salvaged (see LSTD)", list ? (const char *)cString(list, true) : "");
         else if (list)
         {
           ReplyCode = 910;
-          return cString::sprintf("%swarings while salvage deleted recordings", (const char *)cString(list, true));
+          return cString::sprintf("%swarnings while salvaging deleted recordings", (const char *)cString(list, true));
         } else
         {
           ReplyCode = 911;
-          return "all deleted recordings are salvaged";
+          return "all deleted recordings were salvaged";
         }
       } else
       {
@@ -1058,7 +1058,7 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
     } else
     {
       ReplyCode = 501;
-      return "number of deleted recoding for purge missing";
+      return "number of deleted recording for purge missing";
     }
   }
   return NULL;

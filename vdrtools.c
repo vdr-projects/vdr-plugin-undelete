@@ -84,7 +84,7 @@ char *SkipQuote(char *s)
 
 char *ExchangeChars(char *s, bool ToFileSystem)
 {
-// ToFileSystem is not use, only for comatibility with 'ExchangeChars' from 'recording.c'
+// ToFileSystem is not used, only for compatibility with 'ExchangeChars' from 'recording.c'
   char *p = s;
   while (*p)
   {
@@ -177,7 +177,7 @@ const char *KeyName(eKeys Key)
     case kPurgeRec:   return tr("Purge");          break;
     case kDelLine:    return tr("DeleteLine");     break;
     case kHelpKeys:   return tr("HelpKeys");       break;
-    default:          return tr("unknow");         break;
+    default:          return tr("unknown");         break;
   }
 }
 
@@ -214,7 +214,7 @@ const char *OSStateName(eOSState OSState)
     case osUser8:      return "osUser8";
     case osUser9:      return "osUser9";
     case osUser10:     return "osUser10";
-    default:           return "unknow";
+    default:           return "unknown";
   }
   return "";
 }

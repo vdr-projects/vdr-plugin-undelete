@@ -171,9 +171,9 @@ void cMenuSetupUndelete::Set(int FunctionToSelect)
   if (DisplayLine(functionline_num[1]) && functionline_b_e[1].u == 0x3)
     Add(new cMenuEditIntItem (tr("Setup$  Display bottom salvage ex lines"),             &functionline_num[1].u, 1, 200));
   if ((DisplayLine(functionline_b_e[0]) || DisplayLine(functionline_b_e[1])) && DisplayLine(firstsalvage) && ((functionline_b_e[0].u & functionline_b_e[1].u & 0x1) != 0x0 || (functionline_b_e[0].u & functionline_b_e[1].u & 0x2) != 0x0))
-    Add(new cMenuEditBoolItem(tr("Setup$  inward lines"),                                &firstsalvage.u, tr("Choise$purge"), tr("Choise$salvage")));
+    Add(new cMenuEditBoolItem(tr("Setup$  inward lines"),                                &firstsalvage.u, tr("Choice$purge"), tr("Choice$salvage")));
   if (FunctionToSelect > 0)
-    current = Count(); // pre select this line for display
+    current = Count(); // preselect this line for display
   Add(new cMenuEditBoolItem(tr("Setup$Change assigned functionkeys"),                    &show_setupfunction));
   if (show_setupfunction)
   {

@@ -1,9 +1,9 @@
 /*
- * autotimeredit: A plugin for the Video Disk Recorder
+ * undelete: A plugin for the Video Disk Recorder
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: menueditkeys.c 0.5 2005/11/17 21:05:05 hflor Exp $
+ * $Id: menudispkey.c 0.5 2005/11/17 21:05:05 hflor Exp $
  */
 
 #include "menudispkey.h"

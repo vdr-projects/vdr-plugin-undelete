@@ -241,23 +241,23 @@ void cMenuRecordingSelect::AddFunctionLines(void)
     if (top_line[0])
       Ins(new cOsdItem(tr("Display$Purge all records ..."), osUser2));
     if (top_line[1])
-      Ins(new cOsdItem(tr("Display$Salavge all records ..."), osUser3));
+      Ins(new cOsdItem(tr("Display$Salvage all records ..."), osUser3));
     if (bottom_line[0])
       Add(new cOsdItem(tr("Display$Purge all records ..."), osUser2));
     if (bottom_line[1])
-      Add(new cOsdItem(tr("Display$Salavge all records ..."), osUser3));
+      Add(new cOsdItem(tr("Display$Salvage all records ..."), osUser3));
   } else
   {
     if (top_line[1])
-      Ins(new cOsdItem(tr("Display$Salavge all records ..."), osUser3));
+      Ins(new cOsdItem(tr("Display$Salvage all records ..."), osUser3));
     if (top_line[0])
       Ins(new cOsdItem(tr("Display$Purge all records ..."), osUser2));
     if (bottom_line[1])
-      Add(new cOsdItem(tr("Display$Salavge all records ..."), osUser3));
+      Add(new cOsdItem(tr("Display$Salvage all records ..."), osUser3));
     if (bottom_line[0])
       Add(new cOsdItem(tr("Display$Purge all records ..."), osUser2));
   }
-  d1syslog("cMenuRecordingSelect::AddFunctionLines", "new top(purge)=%s top(salavge)=%s bottom(purge)=%s bottom(salvage)=%s", top_line[0] ? "yes" : "no", top_line[1] ? "yes" : "no", bottom_line[0] ? "yes" : "no", bottom_line[1] ? "yes" : "no");
+  d1syslog("cMenuRecordingSelect::AddFunctionLines", "new top(purge)=%s top(salvage)=%s bottom(purge)=%s bottom(salvage)=%s", top_line[0] ? "yes" : "no", top_line[1] ? "yes" : "no", bottom_line[0] ? "yes" : "no", bottom_line[1] ? "yes" : "no");
 }
 
 void cMenuRecordingSelect::DelFunctionLines(void)
@@ -447,7 +447,7 @@ eOSState cMenuRecordingSelect::FunctionCall(int FunctionNumber)
               state = osContinue;
               break;
 
-    // Choise$Display keys
+    // Choice$Display keys
     case 10:  state = AddSubMenu(new cMenuDispKey());
               break;
   }

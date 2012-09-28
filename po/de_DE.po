@@ -93,11 +93,11 @@ msgid "Setup$  Display bottom salvage ex lines"
 msgstr "  Anzahl Einträge für Darstellung"
 
 #: menusetup.c:175 undelete.c:114 undelete.c:142 undelete.c:275
-msgid "Choise$purge"
+msgid "Choice$purge"
 msgstr "löschen"
 
 #: menusetup.c:175 undelete.c:114 undelete.c:142 undelete.c:276
-msgid "Choise$salvage"
+msgid "Choice$salvage"
 msgstr "wiederherst."
 
 #: menusetup.c:175
@@ -155,7 +155,7 @@ msgid "Display$Purge all records ..."
 msgstr "Alle Aufnahmen endgültig löschen ..."
 
 #: menuundelete.c:241 menuundelete.c:245 menuundelete.c:249 menuundelete.c:253
-msgid "Display$Salavge all records ..."
+msgid "Display$Salvage all records ..."
 msgstr "Alle Aufnahmen wiederherstellen ..."
 
 #: menuundelete.c:352
@@ -212,51 +212,51 @@ msgid "Error$error accessing indexfile"
 msgstr "Fehler beim lesen der Indexdatei"
 
 #: undelete.c:269 undelete.c:273 undelete.c:297
-msgid "Choise$none"
+msgid "Choice$none"
 msgstr "ohne"
 
 #: undelete.c:270
-msgid "Choise$top"
+msgid "Choice$top"
 msgstr "oben"
 
 #: undelete.c:271
-msgid "Choise$bottom"
+msgid "Choice$bottom"
 msgstr "unten"
 
 #: undelete.c:272
-msgid "Choise$top and bottom"
+msgid "Choice$top and bottom"
 msgstr "oben & unten"
 
 #: undelete.c:274
-msgid "Choise$open/summary"
+msgid "Choice$open/summary"
 msgstr "Öffnen/Inhalt"
 
 #: undelete.c:277
-msgid "Choise$purge all"
+msgid "Choice$purge all"
 msgstr "alle löschen"
 
 #: undelete.c:278
-msgid "Choise$salvage all"
+msgid "Choice$salvage all"
 msgstr "alle wiederh."
 
 #: undelete.c:279
-msgid "Choise$open"
+msgid "Choice$open"
 msgstr "Öffnen"
 
 #: undelete.c:280
-msgid "Choise$summary"
+msgid "Choice$summary"
 msgstr "Inhalt"
 
 #: undelete.c:281
-msgid "Choise$switch hotkeys to 1"
+msgid "Choice$switch hotkeys to 1"
 msgstr "Tastenbel. 1"
 
 #: undelete.c:282
-msgid "Choise$switch hotkeys to 2"
+msgid "Choice$switch hotkeys to 2"
 msgstr "Tastenbel. 2"
 
 #: undelete.c:283
-msgid "Choise$Display keys"
+msgid "Choice$Display keys"
 msgstr "Tastenanzeige"
 
 #: undelete.c:284
@@ -308,7 +308,7 @@ msgid "Blue"
 msgstr ""
 
 #: undelete.c:307
-msgid "Choise$User"
+msgid "Choice$User"
 msgstr "Benutzer"
 
 #: undelete.c:406
@@ -500,12 +500,12 @@ msgstr "Löschung"
 
 #: vdrtools.c:179
 msgid "DeleteLine"
-msgstr "Zeile löschen"
+msgstr "ZeileLöschen"
 
 #: vdrtools.c:180
 msgid "HelpKeys"
-msgstr "Hilfstasten"
+msgstr "HilfeTasten"
 
 #: vdrtools.c:181
-msgid "unknow"
+msgid "unknown"
 msgstr "unbekannt"
