@@ -1,46 +1,23 @@
 VDR Plugin 'undelete' Revision History
 --------------------------------------
 
-2004-10-08: Version 0.0.1
+xxxx-xx-xx Version: UNRELEASED
+-------------------------
 
-- Initial revision.
+2012-09-29  Martin Dummer  <martin.dummer@gmx.net>
+- fix lots of typos
+- turn HISTORY file upside down (to have recent changes at the top)
 
-2004-10-10: Version 0.0.2
+2012-09-02  Martin Dummer  <martin.dummer@gmx.net>
+- menuundelete.c: add compile fix for vdr >=1.7.28
+  thanks to user "tv-user" on http://projects.vdr-developer.org/ 
 
-* Bug fixes
-- TriggerUpdate for VDR >= 1.3.11 (thanks to Brougs78@vdrportal.de)
-- Update counter in listviews
-- Confirm options
-
-2004-11-08: Version 0.0.3
-
-- Update for VDR >= 1.3.15
-
-2005-11-16: Version 0.0.4
-
-* Bug fix purge/salvage deleted recording while purge/salvage a directory with the same name
-- Update for VDR >= 1.3.36
-- Remove empty directorys in background
-- Support control with svdrp
-- User can change the hotkeys
-- new function "purge all" (for Olaf Henkel)
-- new function "salvage all"
-
-2005-11-17: Version 0.0.5
-
-- Add Remove empty directorys after 10min at svdrp-purge
-- Fix select a line with a numeric-key
-- Fix switch hotkeys with the same key
-- Add missing display of assigned keys
-
-2006-03-15 : Version 0.0.6
-
-- add French translation (thanks to pat@vdrportal.de)
-- Change translation for Keys with numbers
-- add check for count of *.vdr files
+2012-06-27  Martin Dummer  <martin.dummer@gmx.net>
+- cleanup the Makefile, changes are inspired from VDR sample plugin Makefile
+- remove file i18n.c.org (not needed)
+- convert i18n handling to gettext
 
 2012-06-18  Martin Dummer  <martin.dummer@gmx.net>
-
 - corrected the HISTORY header
 - edit the README file
 - merge patch for gcc-4.4 from Holger Schvestka <hotzenplotz5@gmx.de>
@@ -49,13 +26,41 @@ VDR Plugin 'undelete' Revision History
 - merge patch with cosmetic changes: change text summary to info for VDR >= 1.3.25
     from Matthias Schwarzott <zzam@gentoo.org>
 
-2012-06-27  Martin Dummer  <martin.dummer@gmx.net>
 
-- cleanup the Makefile, changes are inspired from VDR sample plugin Makefile
-- remove file i18n.c.org (not needed)
-- convert i18n handling to gettext
+2006-03-15: Version 0.0.6
+-------------------------
+- add French translation (thanks to pat@vdrportal.de)
+- Change translation for Keys with numbers
+- add check for count of *.vdr files
 
-2012-09-02  Martin Dummer  <martin.dummer@gmx.net>
+2005-11-17: Version 0.0.5
+-------------------------
+- Add Remove empty directorys after 10min at svdrp-purge
+- Fix select a line with a numeric-key
+- Fix switch hotkeys with the same key
+- Add missing display of assigned keys
 
-- menuundelete.c: add compile fix for vdr >=1.7.28
-  thanks to user "tv-user" on http://projects.vdr-developer.org/ 
+2005-11-16: Version 0.0.4
+-------------------------
+* Bug fix purge/salvage deleted recording while purge/salvage a directory with the same name
+- Update for VDR >= 1.3.36
+- Remove empty directorys in background
+- Support control with svdrp
+- User can change the hotkeys
+- new function "purge all" (for Olaf Henkel)
+- new function "salvage all"
+
+2004-11-08: Version 0.0.3
+-------------------------
+- Update for VDR >= 1.3.15
+
+2004-10-10: Version 0.0.2
+-------------------------
+* Bug fixes
+- TriggerUpdate for VDR >= 1.3.11 (thanks to Brougs78@vdrportal.de)
+- Update counter in listviews
+- Confirm options
+
+2004-10-08: Version 0.0.1
+-------------------------
+- Initial revision.
