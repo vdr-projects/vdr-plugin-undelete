@@ -420,12 +420,11 @@ const char *cPluginUndelete::CommandLineHelp(void)
             "  -u        --confirm_salvage_all     show confirmation for salvage all function\n"
             "  -U        --not_confirm_salvage_all salvage all function without confirmation\n"
             "  -v        --verbose                 Enable more logging\n"
-            "  -V        --noverbose               Disable more loggig\n"
-            "            --nosetup_commandline     Hide the 'Preferr Command Line Parameter'\n"
-            "                                      form setup-menu\n"
-            "  @config-file                        Read also parameters from this file"
-            "\n"
-            "  note: recording means deleted recordings (there not show in VDR)");
+            "  -V        --noverbose               Disable more logging\n"
+            "            --nosetup_commandline     Hide the 'Prefer Command Line Parameter'\n"
+            "                                      from plugin setup\n"
+            "  @config-file                        Read also parameters from this file\n"
+            "  Note: recording in this plugin's context means deleted recordings");
 
 /* only for translation:
             "  -m        --visible_in_mainmenu     Plugin wird im Hautmenü angezeigt\n"

@@ -145,7 +145,7 @@ void cMenuSetupUndelete::Set(int FunctionToSelect)
 
   Add(new cOsdItem         (tr("Setup$Display deleted recordings now"),                  osUser1));
   if (DisplayLine(commandline_preference))
-    Add(new cMenuEditBoolItem(tr("Setup$Preferr Command Line Parameter"),                &commandline_preference.u));
+    Add(new cMenuEditBoolItem(tr("Setup$Prefer Command Line Parameter"),                 &commandline_preference.u));
   if (DisplayLine(mainmenu_visible))
     Add(new cMenuEditBoolItem(tr("Setup$Visible in Mainmenu"),                           &mainmenu_visible.u));
   if (DisplayLine(mainmenu_name) && mainmenu_visible.u)
@@ -186,13 +186,13 @@ void cMenuSetupUndelete::Set(int FunctionToSelect)
       Add(new cMenuEditKeysItem(name,                                                    &functionkey[i].u));
       free(name);
     }
-    Add(new cMenuOsdNoSelectItem(tr("Setup$  ** Spezial handled keys **")));
+    Add(new cMenuOsdNoSelectItem(tr("Setup$  ** Special handled keys **")));
     if (FunctionToSelect == 1 && okkey.u == 1)
       current = Count();
     Add(new cMenuEditStraItem(tr("Setup$  OK-key function"),                             &okkey.u, MaxFunctionName, FunctionName));
     if (FunctionToSelect == 1 && numkey.u == 1)
       current = Count();
-    Add(new cMenuEditStraItem(tr("Setup$  Numerickey select the entry and"),             &numkey.u, 4, FunctionName));
+    Add(new cMenuEditStraItem(tr("Setup$  Numeric key selects the entry and"),           &numkey.u, 4, FunctionName));
   }
   if (DisplayLine(verbose))
     Add(new cMenuEditBoolItem(tr("Setup$Verbose Log Mode"),                              &verbose.u));
@@ -236,7 +236,7 @@ eOSState cMenuSetupUndelete::ProcessKey(eKeys Key)
       show_setupfunction = true;
       Set(function2);
       char *info = NULL;
-      asprintf(&info, tr("Error$Key for funtion %s and %s identical."), FunctionName[function1], FunctionName[function2]);
+      asprintf(&info, tr("Error$Key for function %s and %s is identical."), FunctionName[function1], FunctionName[function2]);
       INFO(info);
       free(info);
       state = osContinue;
