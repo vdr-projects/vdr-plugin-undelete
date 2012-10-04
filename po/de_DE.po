@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VDR 1.5.7\n"
 "Report-Msgid-Bugs-To: <martin.dummer@gmx.net>\n"
-"POT-Creation-Date: 2012-10-01 10:04+0200\n"
+"POT-Creation-Date: 2012-10-04 12:47+0200\n"
 "PO-Revision-Date: 2012-06-27 16:35+0200\n"
 "Last-Translator: Martin Dummer <martin.dummer@gmx.net>\n"
 "Language-Team: <vdr@linuxtv.org>\n"
@@ -15,6 +15,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+msgid "undelete for recordings"
+msgstr "Gelöschte Aufnahmen wiederherstellen"
 
 msgid "Choice$salvage"
 msgstr "wiederherst."
@@ -366,4 +369,3 @@ msgstr "Tasten von %s und %s sind gleich."
 
 msgid "Setup$Select"
 msgstr "Auswahl"
-
