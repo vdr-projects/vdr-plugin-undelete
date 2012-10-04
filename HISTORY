@@ -1,8 +1,12 @@
 VDR Plugin 'undelete' Revision History
 --------------------------------------
 
-xxxx-xx-xx Version: UNRELEASED
+2012-10-05 Version: 0.0.7
 -------------------------
+- fix more typos
+- review translations DE and FR
+- undelete.c: make plugin description translatable
+- release version 0.0.7
 
 2012-09-29  Martin Dummer  <martin.dummer@gmx.net>
 - fix lots of typos

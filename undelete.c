@@ -15,7 +15,7 @@
 #include <vdr/recording.h>
 #include <vdr/videodir.h>
 
-static const char *VERSION           = "0.0.7pre1";
+static const char *VERSION           = "0.0.7";
 static const char DESCRIPTION[]      = trNOOP("undelete for recordings");
 
 
