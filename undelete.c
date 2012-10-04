@@ -15,7 +15,7 @@
 #include <vdr/recording.h>
 #include <vdr/videodir.h>
 
-static const char *VERSION           = "0.0.6";
+static const char *VERSION           = "0.0.7pre1";
 static const char *DESCRIPTION       = "undelete for recordings";
 
 // Global variables that control the overall behaviour:
@@ -402,7 +402,7 @@ bool cPluginUndelete::ProcessArg(int argc, char *argv[])
 const char *cPluginUndelete::CommandLineHelp(void)
 {
   // Return a string that describes all known command line options.            column 80 --> |
-  return tr("  -m        --visible_in_mainmenu     Show the plugin in the mainmenu\n"
+  return   ("  -m        --visible_in_mainmenu     Show the plugin in the mainmenu\n"
             "  -M        --hide_in_mainmenu        Hide the plugin in the mainmenu\n"
             "                                      You can start the Plugin in the setupmenu\n"
             "  -n Name   --mainmenu_name=Name      Select Name for entry in the mainmenu\n"
@@ -419,8 +419,8 @@ const char *cPluginUndelete::CommandLineHelp(void)
             "  -T        --not_confirm_salvage_dir salvage directory without confirmation\n"
             "  -u        --confirm_salvage_all     show confirmation for salvage all function\n"
             "  -U        --not_confirm_salvage_all salvage all function without confirmation\n"
-            "  -v        --verbose                 Enable more logging\n"
-            "  -V        --noverbose               Disable more logging\n"
+            "  -v        --verbose                 Enable verbose logging\n"
+            "  -V        --noverbose               Disable verbose logging\n"
             "            --nosetup_commandline     Hide the 'Prefer Command Line Parameter'\n"
             "                                      from plugin setup\n"
             "  @config-file                        Read also parameters from this file\n"
