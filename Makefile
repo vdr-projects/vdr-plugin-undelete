@@ -74,10 +74,6 @@ endif
 ### The object files (add further files here):
 
 OBJS = $(PLUGIN).o menuundelete.o menusetup.o vdrtools.o menueditkeys.o menudispkey.o
-#FIXME
-ifeq ($(shell test $(VDRVERSNUM) -lt 10308 ; echo $$?),0)
-  OBJS += menutext.o
-endif
 
 ifneq ($(strip $(GITTAG)),)
 DEFINES += -DGITVERSION='"-GIT-$(GITTAG)"'

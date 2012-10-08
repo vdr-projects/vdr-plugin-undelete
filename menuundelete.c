@@ -7,9 +7,6 @@
  */
 
 #include "menuundelete.h"
-#if VDRVERSNUM < 10307
-  #include "menutext.h"
-#endif
 #include "undelete.h"
 #include "menudispkey.h"
 #include "vdrtools.h"
