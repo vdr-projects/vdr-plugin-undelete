@@ -5,6 +5,7 @@ VDR Plugin 'undelete' Revision History
 -------------------------
 - edit plugin version string to reflect GIT commit IDs
 - new minimum vdr version 1.5.7, added code to ensure this
+- add version requirements to README
 - start code cleanup: remove conditional code for vdr <1.5.7
 
 2012-10-05 Version: 0.0.7

@@ -1,12 +1,12 @@
 This is a "plugin" for the Video Disk Recorder (VDR).
 
 Written by:                  Hardy Flor <HFlor@gmx.de>
+cont'd by:                   Martin Dummer <martin.dummer@gmx.net>
 
 Project's homepage:          http://projects.vdr-developer.org/projects/plg-undelete
 
 See the file COPYING for license information.
 
-undelete-plugin version 0.0.6
 
 Description:
 ============
@@ -24,13 +24,23 @@ The plugin can also show the size of the deleted recordings and and immediate de
 can be triggered.
 
 
+Requirements:
+=============
+
+up to undelete-plugin v0.0.6: VDR >=1.3.8
+
+undelete-plugin v0.0.7 and later: VDR >=1.5.7
+
+
+
 Usage:
 ======
 
-You can build the current list of deleted from the plugin-setup menu 
-(by 'Display deleted recordings now') or from the plugin's mainmenu entry (mainmenuentry visible from then mainmenu.
+You can build the current list of deleted recordings from the plugin-setup menu 
+(by 'Display deleted recordings now') or from the plugin's mainmenu entry (if 
+mainmenuentry is visible in the main menu).
 
-The keys for purge and salvage can you change in the setup of plugin
+The keys for purge and salvage are adjustable in the plugin's setup
 
 
 The plugin has the following SVDRP commands:
