@@ -14,6 +14,7 @@ PLUGIN = undelete
 ### The version number of this plugin (taken from the main source file):
 
 VERSION = $(shell grep 'static const char \*VERSION *=' $(PLUGIN).c | awk '{ print $$6 }' | sed -e 's/[";]//g')
+GITTAG  = $(shell git describe --always 2>/dev/null)
 
 ### The C++ compiler and options:
 
@@ -76,6 +77,10 @@ OBJS = $(PLUGIN).o menuundelete.o menusetup.o vdrtools.o menueditkeys.o menudisp
 #FIXME
 ifeq ($(shell test $(VDRVERSNUM) -lt 10308 ; echo $$?),0)
   OBJS += menutext.o
+endif
+
+ifneq ($(strip $(GITTAG)),)
+DEFINES += -DGITVERSION='"-GIT-$(GITTAG)"'
 endif
 
 ### Implicit rules:

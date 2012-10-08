@@ -15,7 +15,11 @@
 #include <vdr/recording.h>
 #include <vdr/videodir.h>
 
-static const char *VERSION           = "0.0.7";
+#ifndef GITVERSION
+#define GITVERSION ""
+#endif
+
+static const char VERSION[]          = "0.0.7" GITVERSION;
 static const char DESCRIPTION[]      = trNOOP("undelete for recordings");
 
 
