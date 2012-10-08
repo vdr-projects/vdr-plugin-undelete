@@ -15,6 +15,10 @@
 #include <vdr/recording.h>
 #include <vdr/videodir.h>
 
+#if defined(APIVERSNUM) && APIVERSNUM < 10507
+#error "VDR-1.5.7 API version or greater is required!"
+#endif
+
 #ifndef GITVERSION
 #define GITVERSION ""
 #endif
