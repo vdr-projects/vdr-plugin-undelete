@@ -65,11 +65,7 @@ char        plugin_name[MaxFileName]  = "Undelete";
 cPlugin     *plugin = NULL;
 bool        PurgeRecording = false;
 bool        SalvageRecording = false;
-#if VDRVERSNUM >= 10311
 cRecordings DeletedRecordings(true);
-#else
-cRecordings DeletedRecordings;
-#endif
 bool        MenuIsOpen = false;
 char        *SVDRP_Process = NULL;
 char        *WorkFilename = NULL;
@@ -206,11 +202,7 @@ class cPluginUndelete : public cPlugin {
 private:
   // Add any member variables or functions you may need here.
   void FreeKeyNames(void);
-#if VDRVERSNUM >= 10507
   char* OSDLanguage;
-#else
-  int OSDLanguage;
-#endif
   void TestAndSetOSDLanguage(void);
   bool ProcessArg(int argc, char *argv[]);
 #ifdef UND_Debug
@@ -294,11 +286,7 @@ void cPluginUndelete::TestAndSetOSDLanguage(void)
     FunctionHotKey[4] = tr("Display$purge all");
     FunctionHotKey[5] = tr("Display$salvage all");
     FunctionHotKey[6] = tr("Open");
-#if VDRVERSNUM >= 10325
     FunctionHotKey[7] = tr("Info");
-#else
-    FunctionHotKey[7] = tr("Summary");
-#endif
     FunctionHotKey[8] = tr("Display$<--1");
     FunctionHotKey[9] = tr("Display$2-->");
     FunctionHotKey[10] = tr("Display$disp. keys");
@@ -715,13 +703,9 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
         cRecording *recording = DeletedRecordings.Get(atoi(Option) - 1);
         if (recording)
         {
-#if VDRVERSNUM >= 10325
           const char *summary = NULL;
           if (recording->Info())
             summary = recording->Info()->Description();
-#else 
-          const char *summary = recording->Summary();
-#endif
           if (summary && *summary)
           {
             ReplyCode = 902;
@@ -738,11 +722,7 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
     } else
     {
       // list deleted recordings
-#if VDRVERSNUM >= 10311
       DeletedRecordings.Load();
-#else
-      DeletedRecordings.Load(true);
-#endif
       DeletedRecordings.Sort();
       freenull(SVDRP_Process);
       char *list = NULL;
@@ -780,11 +760,7 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
       }
     } else
     {
-#if VDRVERSNUM >= 10311
       DeletedRecordings.Load();
-#else
-      DeletedRecordings.Load(true);
-#endif
       for (cRecording *recording = DeletedRecordings.First(); recording; recording = DeletedRecordings.Next(recording))
         GetVDRSize(recording->FileName(), llsize);
       DeletedRecordings.Clear();
@@ -867,11 +843,7 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
       {
         if (!DeletedRecordings.Count())
         {
-#if VDRVERSNUM >= 10311
           DeletedRecordings.Load();
-#else
-          DeletedRecordings.Load(true);
-#endif
           DeletedRecordings.Sort();
           freenull(SVDRP_Process);
           if (!DeletedRecordings.Count())
@@ -895,11 +867,7 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
           oRemoveThread.Start();
         DeletedRecordings.Clear();
         freenull(SVDRP_Process);
-#if VDRVERSNUM >= 10311
         DeletedRecordings.Load();
-#else
-        DeletedRecordings.Load(true);
-#endif
         bool recordingsavailable = DeletedRecordings.Count();
         DeletedRecordings.Clear();
         if (recordingsavailable)
@@ -1014,11 +982,7 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
       {
         if (!DeletedRecordings.Count())
         {
-#if VDRVERSNUM >= 10311
           DeletedRecordings.Load();
-#else
-          DeletedRecordings.Load(true);
-#endif
           DeletedRecordings.Sort();
           freenull(SVDRP_Process);
           if (!DeletedRecordings.Count())
@@ -1040,11 +1004,7 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
         }
         DeletedRecordings.Clear();
         freenull(SVDRP_Process);
-#if VDRVERSNUM >= 10311
         DeletedRecordings.Load();
-#else
-        DeletedRecordings.Load(true);
-#endif
         bool recordingsavailable = DeletedRecordings.Count();
         DeletedRecordings.Clear();
         if (recordingsavailable)
@@ -1083,14 +1043,7 @@ void cRemoveThread::Action(void)
 
 bool cRemoveThread::ActiveWithCancel(void)
 {
-#if VDRVERSNUM >= 10318
   return Active();
-#else
-  if (Active())
-    return true;
-  Cancel(1); // reset the var "running" to restart the thread, fixed in 1.3.18
-  return false;
-#endif
 }
 
 VDRPLUGINCREATOR(cPluginUndelete); // Don't touch this!

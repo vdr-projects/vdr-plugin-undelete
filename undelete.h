@@ -15,25 +15,11 @@
 #include <vdr/plugin.h>
 
 #define freenull(T) { if (T) { free(T); T = NULL; } }
-#if VDRVERSNUM > 10307
-  #define MAXOSDTEXTWIDTH 45
-  #define AKTOSDTEXTWIDTH 45
-  #define ERROR(E)  Skins.Message(mtError, E)
-  #define INFO(I)   Skins.Message(mtInfo, I)
-  #define STATUS(S) Skins.Message(mtStatus, S)
-#elif VDRVERSNUM == 10307
-  #error "cMenuText is in VDR 1.3.7 not in menu.h"
-#else
-  #define MAXOSDTEXTWIDTH MAXOSDWIDTH
-  #define AKTOSDTEXTWIDTH Setup.OSDwidth
-  #define ERROR(E)  Interface->Error(E)
-  #define INFO(I)   Interface->Info(I)
-  #ifdef HAVE_ELCHI
-    #define STATUS(S) { Interface->Status(S, Setup.Theme == themeVanilla ? clrBlack : (eDvbColor)fginfofont, Setup.Theme == themeVanilla ? clrCyan : clrInfoLine); Interface->Flush(); }
-  #else
-    #define STATUS(S) { Interface->Status(S); Interface->Flush(); }
-  #endif
-#endif
+#define MAXOSDTEXTWIDTH 45
+#define AKTOSDTEXTWIDTH 45
+#define ERROR(E)  Skins.Message(mtError, E)
+#define INFO(I)   Skins.Message(mtInfo, I)
+#define STATUS(S) Skins.Message(mtStatus, S)
 
 #ifdef UND_Debug
 extern int cMenuRecordingSelectItem_nextID;
