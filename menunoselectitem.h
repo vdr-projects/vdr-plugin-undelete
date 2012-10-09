@@ -19,15 +19,7 @@
 
 class cMenuOsdNoSelectItem : public cOsdItem {
 public:
-#if VDRVERSNUM >= 10307
   cMenuOsdNoSelectItem(const char *Text):cOsdItem(Text) { SetSelectable(false); }
-#else
-  #ifdef HAVE_ELCHI
-  cMenuOsdNoSelectItem(const char *Text):cOsdItem(Text) { SetColor(Setup.Theme == themeVanilla ? clrCyan : clrScrolLine, clrBackground); }
-  #else
-  cMenuOsdNoSelectItem(const char *Text):cOsdItem(Text) { SetColor(clrCyan, clrBackground); }
-  #endif
-#endif
-  };
+};
 
 #endif //__MENUNOSELECTITEM_H
