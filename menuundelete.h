@@ -36,11 +36,7 @@ public:
 #endif
   cMenuRecordingSelectItem(cRecording *Recording, int Level);
   ~cMenuRecordingSelectItem(void);
-#if VDRVERSNUM >= 10315
   virtual int compare(const cListObject &ListObject) const;
-#else
-  virtual bool operator< (const cListObject &ListObject);
-#endif
   void IncrementCounter(bool New);
   void RefreshCounter(void);
   const char *FileName(void) { return filename; }

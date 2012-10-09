@@ -48,7 +48,6 @@ cMenuRecordingSelectItem::~cMenuRecordingSelectItem()
   freenull(name);
 }
 
-#if VDRVERSNUM >= 10315
 int cMenuRecordingSelectItem::compare(const cListObject &ListObject) const
 {
   cMenuRecordingSelectItem *temp = (cMenuRecordingSelectItem *)&ListObject;
@@ -58,17 +57,6 @@ int cMenuRecordingSelectItem::compare(const cListObject &ListObject) const
     return strcasecmp(name, temp->name);
   return start == temp->start ? 0 : start < temp->start ? -1 : 1;
 }
-#else
-bool cMenuRecordingSelectItem::operator< (const cListObject &ListObject)
-{
-  cMenuRecordingSelectItem *temp = (cMenuRecordingSelectItem *)&ListObject;
-  if (isdir != temp->isdir)
-    return isdir;
-  if (isdir)
-    return strcasecmp(name, temp->name) < 0;
-  return start < temp->start;
-}
-#endif
 
 void cMenuRecordingSelectItem::IncrementCounter(bool New)
 {
@@ -124,11 +112,7 @@ char *cMenuRecordingSelectItem::DirName(bool Parent)
 // --- cMenuRecordingSelect --------------------------------------------------------
 
 cMenuRecordingSelect::cMenuRecordingSelect(const char *Base, int Level)
-#if VDRVERSNUM >= 10307
 :cOsdMenu(Base ? Base : tr("Deleted Recordings"), 9, 6, 6)
-#else
-:cOsdMenu(Base ? Base : tr("Deleted Recordings"), 6, 6, 6)
-#endif
 {
 #ifdef UND_Debug
   objID = ++cMenuRecordingSelect_nextID;
@@ -291,11 +275,7 @@ void cMenuRecordingSelect::SetHelpKeys(void)
       case 7:   if (IsRecording(item))
                 {
                   cRecording *recording = GetRecording(item);
-#if VDRVERSNUM >= 10325
                   functionavailable = (recording && recording->Info() && recording->Info()->Description() && *recording->Info()->Description());
-#else 
-                  functionavailable = (recording && recording->Summary() && *recording->Summary());
-#endif
                 }
                 break;
       case 8:   functionavailable = KeyState != 1 || functionkey[8].u != functionkey[9].u;
@@ -420,13 +400,8 @@ eOSState cMenuRecordingSelect::FunctionCall(int FunctionNumber)
 
     // summary
     case 7:   recording = GetRecording(item);
-#if VDRVERSNUM >= 10325
               if (recording && recording->Info() && recording->Info()->Description() && *recording->Info()->Description())
                 state = AddSubMenu(new cMenuText(tr("Info"), recording->Info()->Description()));
-#else 
-              if (recording && recording->Summary() && *recording->Summary())
-                state = AddSubMenu(new cMenuText(tr("Summary"), recording->Summary()));
-#endif
               break;
    
     // switch hotkeys to 1
@@ -580,14 +555,8 @@ cMenuUndelete::~cMenuUndelete()
   if (PurgeRecording && !oRemoveThread.ActiveWithCancel())
     oRemoveThread.Start();
   DeletedRecordings.Clear();
-#if VDRVERSNUM >= 10311
   if (SalvageRecording)
-#if VDRVERSNUM >= 10333
     Recordings.Update();
-#else
-    Recordings.TriggerUpdate();
-#endif
-#endif
   MenuIsOpen = false;
 }
 
@@ -595,11 +564,7 @@ void cMenuUndelete::FillMenu(void)
 {
   STATUS(tr("Display$prepare recording display..."));
   DeletedRecordings.Clear();
-#if VDRVERSNUM >= 10311
   DeletedRecordings.Load();
-#else
-  DeletedRecordings.Load(true);
-#endif
   DeletedRecordings.Sort();
   KeyState = 1;
   AddSubMenu(new cMenuRecordingSelect);
