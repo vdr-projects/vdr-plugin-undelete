@@ -11,33 +11,6 @@
 #include <vdr/menu.h>
 #include <vdr/interface.h>
 
-#if VDRVERSNUM < 10318
-// --- cReadLine -------------------------------------------------------------
-
-cReadLine::cReadLine(void)
-{
-  size = 0;
-  buffer = NULL;
-}
-
-cReadLine::~cReadLine()
-{
-  free(buffer);
-}
-
-char *cReadLine::Read(FILE *f)
-{
-  int n = getline(&buffer, &size, f);
-  if (n > 0) {
-     n--;
-     if (buffer[n] == '\n')
-        buffer[n] = 0;
-     return buffer;
-     }
-  return NULL;
-}
-#endif
-
 #ifdef HAVE_SVDRP
 bool GetVDRSize(const char *dir, long long &llSize)
 {

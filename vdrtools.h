@@ -13,18 +13,6 @@
 #include <vdr/osd.h>
 #include <vdr/osdbase.h>
 
-#if VDRVERSNUM < 10318
-class cReadLine {
-private:
-  size_t size;
-  char *buffer;
-public:
-  cReadLine(void);
-  ~cReadLine();
-  char *Read(FILE *f);
-  };
-#endif
-
 #ifdef HAVE_SVDRP
 bool GetVDRSize(const char *dir, long long &llSize);
 #endif
