@@ -94,7 +94,11 @@ char *cMenuRecordingSelectItem::DirName(bool Parent)
   if (isdir || Parent)
   {
     temp = strdup(filename);
+#if VDRVERSNUM >= 20102
+    char *last = temp + strlen(cVideoDirectory::Name()) + 1;
+#else
     char *last = temp + strlen(VideoDirectory) + 1;
+#endif
     for (int i = level; *last && i >= Parent ? -1 : 0; i--)
     {
       last = strchr(last, '/');
@@ -597,7 +601,11 @@ eOSState cMenuUndelete::ProcessKey(eKeys Key)
                             {
                               if (verbose.u)
                                 isyslog("%s: purge deleted recording (%s)", plugin_name, recording->FileName());
+#if VDRVERSNUM >= 20102
+                              if (!cVideoDirectory::RemoveVideoFile(recording->FileName()))
+#else
                               if (!RemoveVideoFile(recording->FileName()))
+#endif
                               {
                                 esyslog("%s: Error while remove deleted recording (%s)", plugin_name, recording->FileName());
                                 processerror = true;
@@ -631,7 +639,11 @@ eOSState cMenuUndelete::ProcessKey(eKeys Key)
                                   processerror = true;
                                 } else
                                 {
+#if VDRVERSNUM >= 20102
+                                  if (!cVideoDirectory::RenameVideoFile(recording->FileName(), NewName))
+#else
                                   if (!RenameVideoFile(recording->FileName(), NewName))
+#endif
                                   {
                                     esyslog("%s: Error while rename deleted recording (%s) to (%s)", plugin_name, recording->FileName(), NewName);
                                     processerror = true;

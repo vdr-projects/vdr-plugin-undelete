@@ -824,7 +824,11 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
           {
             if (verbose.u)
               isyslog("%s: purge deleted recording (%s)", plugin_name, recording->FileName());
+#if VDRVERSNUM >= 20102
+            if (!cVideoDirectory::RemoveVideoFile(recording->FileName()))
+#else
             if (!RemoveVideoFile(recording->FileName()))
+#endif
             {
               esyslog("%s: Error while removing deleted recording (%s)", plugin_name, recording->FileName());
               return cString::sprintf("error while purging the deleted recording \"%s\"  [%s]", Option, recording->Title());
@@ -928,7 +932,11 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
                 return cString::sprintf("recording with the same name exists \"%s\" [%s]", Option, recording->Title());
               } else
               {
+#if VDRVERSNUM >= 20102
+                if (!cVideoDirectory::RenameVideoFile(recording->FileName(), (const char *)NewName))
+#else
                 if (!RenameVideoFile(recording->FileName(), (const char *)NewName))
+#endif
                 {
                   esyslog("%s: Error while renaming deleted recording (%s) to (%s)", plugin_name, recording->FileName(), (const char *)NewName);
                   return cString::sprintf("error while renaming deleted recording \"%s\" [%s]", Option, recording->Title());
@@ -1035,11 +1043,19 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
 #endif
 
 void cRemoveThread::Action(void)
+#if VDRVERSNUM >= 20102
+{
+  d1syslogi("cRemoveThread::Action", "cVideoDirectory::RemoveEmptyVideoDirectories thread started (pid=%d)", getpid());
+  cVideoDirectory::RemoveEmptyVideoDirectories();
+  d1syslogi("cRemoveThread::Action", "cVideoDirectory::RemoveEmptyVideoDirectories thread ended (pid=%d)", getpid());
+}
+#else
 {
   d1syslogi("cRemoveThread::Action", "RemoveEmptyVideoDirectories thread started (pid=%d)", getpid());
   RemoveEmptyVideoDirectories();
   d1syslogi("cRemoveThread::Action", "RemoveEmptyVideoDirectories thread ended (pid=%d)", getpid());
 }
+#endif
 
 bool cRemoveThread::ActiveWithCancel(void)
 {
