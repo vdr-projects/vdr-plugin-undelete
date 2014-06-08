@@ -260,7 +260,7 @@ void cPluginUndelete::FreeKeyNames(void)
 
 void cPluginUndelete::TestAndSetOSDLanguage(void)
 {
-  d2syslog("cPluginUndelete::TestAndSetOSDLanguage", "OSDLanguage=%d", Setup.OSDLanguage);
+  d2syslog("cPluginUndelete::TestAndSetOSDLanguage", "OSDLanguage=%s", Setup.OSDLanguage);
   if (OSDLanguage != Setup.OSDLanguage) {
     FreeKeyNames();
     OSDLanguage = Setup.OSDLanguage;
