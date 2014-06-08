@@ -19,8 +19,6 @@
 #error "VDR-1.5.7 API version or greater is required!"
 #endif
 
-#error APIVERSION 
-
 #ifndef GITVERSION
 #define GITVERSION ""
 #endif
