@@ -52,11 +52,6 @@ INCLUDES +=
 
 DEFINES += -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
 
-### Test SVDRP
-ifeq ($(shell grep -q ReplyCode $(VDRDIR)/plugin.h ; echo $$?),0)
-  DEFINES += -DHAVE_SVDRP
-endif
-
 ### Test Elchi
 ifeq ($(shell test -f $(VDRDIR)/theme.h ; echo $$?),0)
   DEFINES += -DHAVE_ELCHI

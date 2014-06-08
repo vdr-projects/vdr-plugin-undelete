@@ -10,6 +10,8 @@ VDR Plugin 'undelete' Revision History
 - insert compile fix for vdr >=2.1.2, thx to hd_brummy
     closes ticket #1858 http://projects.vdr-developer.org/issues/1858
 - new Makefile taken from vdr-2.1.6
+- remove conditional code for HAVE_SVDRP since SVDRP is always included
+  at least since vdr-1.5.7
 
 2012-10-05 Version: 0.0.7
 -------------------------

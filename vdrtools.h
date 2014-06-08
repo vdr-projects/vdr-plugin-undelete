@@ -13,9 +13,7 @@
 #include <vdr/osd.h>
 #include <vdr/osdbase.h>
 
-#ifdef HAVE_SVDRP
 bool GetVDRSize(const char *dir, long long &llSize);
-#endif
 char *SkipQuote(char *s);
 char *ExchangeChars(char *s, bool ToFileSystem);
 

@@ -225,10 +225,8 @@ public:
   virtual cMenuSetupPage *SetupMenu(void)                       { TestAndSetOSDLanguage(); return new cMenuSetupUndelete; }
   virtual bool SetupParse(const char *Name, const char *Value);
 
-#ifdef HAVE_SVDRP
   virtual const char **SVDRPHelpPages(void);
   virtual cString SVDRPCommand(const char *Command, const char *Option, int &ReplyCode);
-#endif
   };
 
 cPluginUndelete::cPluginUndelete(void)
@@ -661,7 +659,6 @@ bool cPluginUndelete::SetupParse(const char *Name, const char *Value)
   #undef SetParamChar
 }
 
-#ifdef HAVE_SVDRP
 const char **cPluginUndelete::SVDRPHelpPages(void)
 {
   static const char *HelpPages[] = {
@@ -1040,7 +1037,6 @@ cString cPluginUndelete::SVDRPCommand(const char *Command, const char *Option, i
   return NULL;
 #undef CMD
 }
-#endif
 
 void cRemoveThread::Action(void)
 #if VDRVERSNUM >= 20102

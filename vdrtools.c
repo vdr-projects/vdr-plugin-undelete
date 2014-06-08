@@ -11,7 +11,6 @@
 #include <vdr/menu.h>
 #include <vdr/interface.h>
 
-#ifdef HAVE_SVDRP
 bool GetVDRSize(const char *dir, long long &llSize)
 {
   bool bRet = false;
@@ -33,7 +32,6 @@ bool GetVDRSize(const char *dir, long long &llSize)
   }
   return bRet;
 }
-#endif
 
 char *SkipQuote(char *s)
 {
