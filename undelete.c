@@ -19,12 +19,14 @@
 #error "VDR-1.5.7 API version or greater is required!"
 #endif
 
+#error APIVERSION 
+
 #ifndef GITVERSION
 #define GITVERSION ""
 #endif
 
-static const char VERSION[]          = "0.0.7" GITVERSION;
-static const char DESCRIPTION[]      = trNOOP("undelete for recordings");
+static const char *VERSION           = "0.0.7" GITVERSION;
+static const char *DESCRIPTION       = trNOOP("undelete for recordings");
 
 
 // Global variables that control the overall behaviour:

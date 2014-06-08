@@ -7,6 +7,9 @@ VDR Plugin 'undelete' Revision History
 - new minimum vdr version 1.5.7, added code to ensure this
 - add version requirements to README
 - start code cleanup: remove conditional code for vdr <1.5.7
+- insert compile fix for vdr >=2.1.2, thx to hd_brummy
+    closes ticket #1858 http://projects.vdr-developer.org/issues/1858
+- new Makefile taken from vdr-2.1.6
 
 2012-10-05 Version: 0.0.7
 -------------------------
