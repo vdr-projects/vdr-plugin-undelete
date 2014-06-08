@@ -23,8 +23,8 @@
 #define GITVERSION ""
 #endif
 
-static const char VERSION[]          = "0.0.7" GITVERSION;
-static const char DESCRIPTION[]      = trNOOP("undelete for recordings");
+static const char *VERSION           = "0.0.7" GITVERSION;
+static const char *DESCRIPTION       = trNOOP("undelete for recordings");
 
 
 // Global variables that control the overall behaviour:
